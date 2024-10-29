@@ -1,0 +1,153 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Financeiro </title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="scripts/api.js" defer></script>
+    <script src="scripts/data_Time.js" defer></script>
+    <script src="scripts/localStorage.js" defer></script>
+
+    <script src="scripts/exibirHistorico/cabecalhoDatasHistorico.js" defer></script>
+
+    <script src="scripts/exibirLancamentos/exibirLancamentosAutomatico.js" defer></script>
+    <script src="scripts/exibirLancamentos/exibirLancamentosManuais.js" defer></script>
+
+    <script src="scripts/financeiro/calculosFinanceiros.js" defer></script>
+    <script src="scripts/financeiro/exibirDadosFinanceiros.js" defer></script>
+    <script src="scripts/financeiro/novoLancamentoManual.js" defer></script>
+    <script src="scripts/financeiro/opcoesLancamento.js" defer></script>
+    
+</head>
+
+<body onload="exibirTotais()">
+    <header>
+        <div class="relogio" > 
+            <button class=" " id="" 
+            onclick="exibirTotais()">
+                <i class='bx bx-plus-circle'></i> Novo Lançamento
+            </button>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <button id="pedido">
+                        <a href="AppLoja.html">    
+                            Pedido
+                        </a>
+                    </button>
+                </li>
+                <li>
+                    <button id="historico" >
+                        <a href="historico.html">
+                            Historico
+                        </a>
+                    </button>
+                </li>
+                <li>
+                    <button id="financeiro" >
+                        <a href="financeiro.html">
+                            Financeiro
+                        </a>
+                    </button>
+                </li>
+            </ul>
+        </div><!-- menu -->
+    </header>
+
+<main>
+    <div id="containerPedido" class="" >
+        <div class="novoPedido">
+            <button class="btnNovoPedido " id="btnNovoLancamento" 
+            onclick="abrirNovoLancamento()">
+                <i class='bx bx-plus-circle'></i> Novo Lançamento
+            </button>       
+        </div><!-- carrinho -->   
+        <section class="exibicao">  
+        
+        </section><!-- class="exibicao" -->
+    </div><!-- container-pedido-->
+ 
+    
+
+    <div id="containerHistorico" class="">
+        <h1>Financeiro</h1>
+        <br>
+        <div class="dadosHistorico"></div>
+        <section class="financeiro">
+            <dialog id="modalFinanceiro"> 
+                <h2> Novo Lançamento Manual </h2>
+                <button class="" id="btnfecharNovoLancamento" 
+                    onclick="fecharNovoLancamento()" style="border: none;"> 
+                    <i class='excluirCopoPrevia bx bx-x'></i>
+                </button>
+                <br>
+                <section>
+                    <div class="cola">
+                        <label for="tipoLancamento"><p> Tipo de Lançamento </p></label>
+                        <input id="saida" name="tipoLancamento" class="saida tipoLancamento" type="radio" checked onclick="checkOpcaoLancamento('saida')">
+                        <label for="select" id="saida" class="saida"> 
+                            Saida 
+                        </label>
+                        <br>
+                        <input id="entrada" name="tipoLancamento" class="entrada tipoLancamento" type="radio" 
+                        onclick="checkOpcaoLancamento('entrada')">
+                        <label for="select" id="entrada" class="entrada"> 
+                            Entrada
+                        </label>
+                        <br>
+                        <div class="colAPagamento">
+                            <br>
+                            <p><strong> Formas de pagamento </strong></p>
+                            <input id="pix" name="" type="checkbox" 
+                            onclick="labelInputValue_Pagamento('pix')">
+                            <label class="pix" for=""> Pix </label><br>
+                            <input id="debito" name="" type="checkbox" 
+                            onclick="labelInputValue_Pagamento('debito')">
+                            <label class="debito" for=""> Cartão de Débito </label><br>
+                            <input id="credito" name="" type="checkbox" 
+                            onclick="labelInputValue_Pagamento('credito')">
+                            <label class="credito" for=""> Cartão de Crédito </label><br>
+                            <input id="dinheiro" name="" type="checkbox" 
+                            onclick="labelInputValue_Pagamento('dinheiro')">
+                            <label class="dinheiro" for=""> Dinheiro </label><br>
+                            <input id="transferencia" name="" type="checkbox" 
+                            onclick="labelInputValue_Pagamento('transferencia')">
+                            <label class="transferencia" for=""> Transferencia </label><br>
+                            <div class="divPostForm"></div> 
+                        </div>                        
+                        <button class="addNovoLancamento"  id="" 
+                        onclick="addNovoLancamento()">
+                            <i class='bx bx-plus-circle'></i> Novo Lançamento
+                        </button> 
+                    </div>
+
+                    <div class="colb"> 
+                        <label for="cliente-select">Selecione uma opção: </label>
+                        <select id="cliente-select"></select>
+                        <p> Motivo da transferencia: </p>
+                        <textarea placeholder=" ...  informe a que se refere esse lançamento" name=""id="comentarioTransferManual" 
+                        class="comentario"></textarea>
+                    </div>
+                </section>
+                <div class="divPostFormManual"></div> 
+            </dialog>
+        </section>
+    </div>
+
+    <div id="containerFinanceiro" class="invisivel">
+        <h1>financeiro</h1>
+        <h3>Página em construção</h3>
+    </div>
+
+</main>
+
+
+
+</body>
+
+</html>

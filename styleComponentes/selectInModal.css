@@ -1,0 +1,35 @@
+
+
+/* .acai, */
+/* .acaiB, */
+.doces,
+.bebidas,
+.salgados,
+#btnAddBebidas,
+#btnAddDoces,
+#btnAddSalgados
+{
+   display: none;
+}
+
+.selectTipoItem{
+   margin: 1em 0em 1em 0em;
+}
+
+.selectTipoItem button{
+   padding: 0em 1em 0em 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

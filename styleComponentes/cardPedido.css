@@ -1,0 +1,66 @@
+
+
+.cardPedido{
+    width: 50%;
+    margin-left: 1.5em;
+    margin-right: 0.8em;
+    padding: 1.5em 1em;
+    padding-left: 2em;
+    font-size: 14px;
+    margin-top: 1.5em;
+    font-weight: 300;
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cardPedido button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 0.5em;
+}
+
+.cardPedido button i:hover{
+    background-color: var(--cor-borda-suave);
+}
+
+.cardPedido button i{
+    border: solid 1px gray;
+    border-radius: 50px;
+}
+
+.bx-chevron-right{
+    margin-left: 2em;
+}
+
+.btnCopos{
+    cursor: pointer;
+    border: none;
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+.copos{
+    font-size: 13px;
+    margin-bottom: -2em;
+    border-bottom: solid 1px rgba(128, 128, 128, 0.267);
+}
+
+.editar{
+    margin-left: 8px;
+}
+
+
+
+
+
+
+
+
+

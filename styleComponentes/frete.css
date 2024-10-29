@@ -1,0 +1,12 @@
+
+.divFrete{
+    display: flex;
+}
+.divFrete b{
+    margin-right: 1em;
+    transform: translateY(20%);
+    font-size: 1.1em;
+}
+#qtdentregar{
+    max-width: 40%;
+}

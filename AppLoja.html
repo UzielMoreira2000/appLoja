@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> AppLoja </title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <script src="scripts/api.js" defer></script>
+    <script src="scripts/data_Time.js" defer></script>
+    <script src="scripts/exibirCardPedido/exibirPedido.js" defer></script>
+    <script src="scripts/localStorage.js" defer></script>
+    <script src="scripts/modaisScrens.js" defer></script>
+    <script src="scripts/movePedidos.js" defer></script>
+    <script src="scripts/statusBtn.js" defer></script>
+
+    <script src="scripts/carrinho/carrinhoDoPedido.js" defer></script>
+
+    <script src="scripts/criarPedido/addCopo.js" defer></script>
+    <script src="scripts/criarPedido/addFrete.js" defer></script>
+    <script src="scripts/criarPedido/addItem.js" defer></script>
+    <script src="scripts/criarPedido/AddPedido.js" defer></script>
+
+    <script src="scripts/editarPedido_&_copo/editarCopo.js" defer></script>
+    <script src="scripts/editarPedido_&_copo/editarPedido.js" defer></script>
+
+    <script src="scripts/exibirCardItem/exibirCardItem.js" defer></script>
+    <script src="scripts/exibirCardPedido/carregaConcluidosApi.js" defer></script>
+
+    <script src="scripts/montarCopo/moduloCopo.js" defer></script>
+    <script src="scripts/montarCopo/moduloCopo_Adicionais.js" defer></script>
+
+    <script src="scripts/pagamento/exibirPagamento.js" defer></script>
+    <script src="scripts/pagamento/finalizarPagamento.js" defer></script>
+
+</head>
+
+<body onload="carregaConcluidosApi()">
+    <header>
+        <div class="relogio" > 
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <button >
+                        <a href="AppLoja.html">    
+                            Pedido
+                        </a>
+                    </button>
+                </li>
+                <li>
+                    <button  >
+                        <a href="historico.html">
+                            Historico
+                        </a>
+                    </button>
+                </li>
+                <li>
+                    <button >
+                        <a href="financeiro.html">
+                            Financeiro
+                        </a>
+                    </button>
+                </li>
+            </ul>
+        </div><!-- menu -->
+    </header>
+
+<main>
+    <div id="containerPedido" class="" >
+        <div class="novoPedido">
+            <button class="btnNovoPedido " id="btnNovoPedido" 
+            onclick="statusBtn('novoPedido')">
+                <i class='bx bx-plus-circle'></i> Novo Pedido
+            </button>       
+            </div>
+        </div><!-- carrinho -->   
+        <div class="modal-container">
+            <div class="modal">
+                <div class="montagemEdicao">
+                    <div class="topo"  >
+                        <h2 class="statusPedido">Montando Pedido</h2>
+                        <span class="idPedidoInEdit"></span>
+                        <span class="statusPedidoInEdit"></span>
+                        <p></p>
+                    </div>
+                    <div class="selectTipoItem">
+                        <button id="btnAcai">Açais</button>
+                        <button id="btnBebidas">Bebidas</button>
+                        <button id="btnSalgados">Salgados</button>
+                        <!-- <button id="btnDoces">Doces</button> -->
+                    </div>
+                    <div class="opcoes">
+                        <div class="col-a">
+                            <label for="comsumirEm"><p> Local de consumo </p></label>
+                            <input id="estabelecimento" name="comsumirEm" type="radio" 
+                            onclick="labelInputValue_Frete()" checked>
+                            <label for="select"> Estabelecimento </label>
+                            <br>
+                            <input id="entregar" name="comsumirEm" 
+                            type="radio"
+                            onclick="labelInputValue_Frete()" >
+                            <label for="select" id="entregar" class="entregar"> 
+                                Entrega</label>
+                            <br><br>
+
+                            <div class="doces">
+                                <label for="comsumirEm"><p> Doces </p></label>
+                                <input id="pirulitoBig" name="" type="checkbox" 
+                                class="doce"
+                                onclick="labelInputValue_Adicionais('pirulitoBig')">
+                                <label class="pirulitoBig" for=""> Pirulito Big </label>
+                                <br>
+                                <input id="paçoca" name="" type="checkbox" 
+                                class="doce"
+                                onclick="labelInputValue_Adicionais('paçoca')">
+                                <label class="paçoca" for=""> Paçoca </label>
+                                <br>
+                                <input id="kitKat" name="" type="checkbox"
+                                class="doce" 
+                                onclick="labelInputValue_Adicionais('kitKat')">
+                                <label class="kitKat" for=""> KitKat </label>
+                                <br>
+                                <input id="balasMacias" name="" type="checkbox"
+                                class="doce" 
+                                onclick="labelInputValue_Adicionais('balasMacias')">
+                                <label class="balasMacias" for=""> Balinhas Macias </label>
+                                <br>
+                                <input id="balasFregells" name="" type="checkbox" 
+                                class="doce"
+                                onclick="labelInputValue_Adicionais('balasFregells')">
+                                <label class="balasFregells" for=""> Balinhas Fregells </label>
+                            </div>
+
+                            <div class="salgados">
+                                <label for="comsumirEm"><p> Salgadinhos </p></label>
+                                <input id="cronycebola" name="" type="checkbox" 
+                                class="salgado"
+                                onclick="labelInputValue_Adicionais('cronycebola')">
+                                <label class="cronycebola" for=""> 
+                                Crony Cebola 
+                                </label>
+                                <br>
+                                <input id="cronychurrasco" name="" type="checkbox" class="salgado"
+                                onclick="labelInputValue_Adicionais('cronychurrasco')">
+                                <label class="cronychurrasco" for=""> 
+                                    Crony Churrasco 
+                                </label>
+                                <br>
+                                <input id="refinatapicanhaealho" 
+                                name="" type="checkbox" class="salgado"
+                                onclick="labelInputValue_Adicionais('refinatapicanhaealho')">
+                                <label class="refinatapicanhaealho"for="">      
+                                    Refinata Picanha e Alho 
+                                </label>
+                                <br>
+                                <input id="refinatacostelinha" name="" type="checkbox" class="salgado"
+                                onclick="labelInputValue_Adicionais('refinatacostelinha')">
+                                <label class="refinatacostelinha" for=""> 
+                                    Refinata Costelinha 
+                                </label>
+                                <br>
+                                <br>
+                            </div>
+                            
+                            <div class="bebidas">
+                                <label for=""><p> Bebidas </p></label>
+                                <input id="cocacola" name="" type="checkbox" class="bebida"
+                                onclick="labelInputValue_Adicionais('cocacola')">
+                                <label class="cocacola" for=""> Coca-cola</label>
+                                <br>
+                                <input id="guarana" name="" type="checkbox" class="bebida"
+                                onclick="labelInputValue_Adicionais('guarana')">
+                                <label class="guarana" for=""> Guaraná </label>
+                                <br>
+                                <input id="aguacomgas" name="" type="checkbox" class="bebida"
+                                onclick="labelInputValue_Adicionais('aguacomgas')">
+                                <label class="aguacomgas" for=""> Água com Gás</label>
+                                <br>
+                                <input id="aguasemgas" name="" type="checkbox" class="bebida"
+                                onclick="labelInputValue_Adicionais('aguasemgas')">
+                                <label class="aguasemgas" for=""> Água sem Gás</label>
+                                <br>
+                            </div>
+                       
+                            <div class="acai" >
+                                <label for="tipo"><p> Tipo de montagem </p></label>
+                                <input id="acai" name="tipo" type="radio"  checked>
+                                <label for="select">Açai</label>
+                                <br>
+                                <input id="cupuacu" name="tipo" type="radio" >
+                                <label for="select">Cupuaçu</label>
+                                <br>
+                                <input id="misto" name="tipo" type="radio">
+                                <label for="select">Misto</label>
+                                <br>
+                                <br>
+                                <label for="copo"><p> Selecione o Tamanho </p></label>
+                                <input checked id="copo200" type="radio" name="copo">
+                                <label for="copo">Copo 200ml</label>
+                                <br>
+                                <input id="copo300"  type="radio"  name="copo">
+                                <label for="copo">Copo 300ml</label>
+                                <br>
+                                <input id="copo500" type="radio"  name="copo">
+                                <label for="copo">Copo 500ml</label>
+                                <br>
+                                <br>
+                                <label for="quantidade"><p>Quantidade</p>
+                                <input id="quantidade" name="quantidade" type="number" value="1" min="1">
+                           
+                                
+                            </div> <!-- acai -->
+                        </div><!-- col-a -->
+
+                        <div class="col-b">
+                            
+                            <div class="acaiB">
+                                <p>Selecione os Adicionais </p>
+                                <input id="leiteCondensado" name="leite condensado" 
+                                type="checkbox" class="adcComum adc" onclick="labelInputValue_Adicionais('leiteCondensado')">
+                                <label class="leiteCondensado" for="">leite condensado</label>
+                                <br>
+                                <input id="caldaDeChocolate" name="calda de chocolate" 
+                                type="checkbox" class="adcComum adc" onclick="labelInputValue_Adicionais('caldaDeChocolate')">
+                                <label class="caldaDeChocolate" for="">calda de chocolate</label>
+                                <br>
+                                <input id="caldaDeMorango" name="calda de morango" 
+                                type="checkbox" class="adcComum adc" onclick="labelInputValue_Adicionais('caldaDeMorango')">
+                                <label class="caldaDeMorango" for="">calda de morango</label>
+                                <br>
+                                <input id="granola" name="granola" onclick="labelInputValue_Adicionais('granola')"
+                                type="checkbox" class="adcComum adc">
+                                <label class="granola" for="">granola</label>
+                                <br>
+                                <input id="pacoca" name="pacoca" onclick="labelInputValue_Adicionais('pacoca')"
+                                type="checkbox" class="adcComum adc">
+                                <label class="pacoca" for="">paçoca</label>
+                                <br>
+                                <input id="ovomaltine" name="ovomaltine" onclick="labelInputValue_Adicionais('ovomaltine')"
+                                type="checkbox" class="adcComum adc">
+                                <label class="ovomaltine" for="">ovomaltine</label>
+                                <br>
+                                <input id="leiteNinho" name="leite ninho" onclick="labelInputValue_Adicionais('leiteNinho')"
+                                type="checkbox" class="adcComum adc">
+                                <label class="leiteNinho" for="">leite ninho</label>
+                                <br>
+                                <input id="morango" name="morango" onclick="labelInputValue_Adicionais('morango')"
+                                type="checkbox" class="adcComum adc">
+                                <label class="morango" for="">Morango</label>
+                                <br>
+                                <input id="uva" name="uva" onclick="labelInputValue_Adicionais('uva')"
+                                type="checkbox" class="adcComum adc">
+                                <label class="uva" for="">Uva</label>
+                                <br>
+                                <input id="banana" name="banana" onclick="labelInputValue_Adicionais('banana')"
+                                type="checkbox" class="adcComum adc">
+                                <label class="banana" for="">Banana</label>
+                                <br>
+                                <input id="nutella" name="nutella" onclick="labelInputValue_Adicionais('nutella')"
+                                type="checkbox" class="adcPremium adc">
+                                <label class="nutella" for="">Nutella</label>
+                                <br>
+                                <input id="mem" name="mem" onclick="labelInputValue_Adicionais('mem')"
+                                 type="checkbox" class="adcPremium adc">
+                                <label class="mem" for="mem">M&m</label>
+                                <br>
+                                <input id="kitkat" name="kitkat" onclick="labelInputValue_Adicionais('kitkat')"
+                                type="checkbox" class="adcPremium adc">
+                                <label class="kitkat" for="kitkat">KitKat</label>
+                                <br><br>
+                                <button id="btnAddCopo" onclick="addCopo()">
+                                    Adicionar Copo
+                                </button>
+                                <button id="btnAddCopoInEdit" onclick="addCopoInEdit()">
+                                    *Adicionar Copo 
+                                </button>
+                                <button id="btnEditCopo" onclick="btnEditCopo()">
+                                    Atualizar Copo 
+                                </button>
+                            </div><!-- acai -->
+                            <br>
+                            <button id="btnAddBebidas"
+                            onclick="addItem('bebida')">
+                                Adicionar Bebidas
+                            </button>
+                            <br>
+                            <button id="btnAddSalgados"
+                            onclick="addItem('salgado')">
+                                Adicionar Salgados
+                            </button>
+                           <br>
+                            <!-- <button id="btnAddDoces"
+                            onclick="addItem('doce')">
+                                Adicionar Doces
+                            </button> -->
+                            <button id="btnAtualizar" onclick="atualizarPedido()">
+                                Atualizar Pedido
+                            </button>
+                            <button id="btnAddPedido" onclick="addNovoLancamentoAutomatico()">
+                                Adicionar Pedido
+                            </button>
+                        </div><!--col-b -->
+
+                        <div class="col-c">
+                            <p>Carrinho do Pedido</p>
+                            <p class="infoCarrinho"></p>
+                            <div id="carrinhoPedido" class="carrinhoPedido">
+                            </div>
+                        </div><!--col-c -->
+
+                    </div><!-- opções -->
+                    <br>
+                </div>
+                <div class="divPagamento"></div>
+                <div class="divPostForm"></div> 
+            </div><!-- modal -->
+        </div><!-- modal container -->
+
+        <section class="exibicao">  
+            <div class="exibepedido fila">
+                <h4 class="tituloFila">Fila</h4> 
+            </div>
+            <div class="exibepedido preparo">
+                <h4 class="tituloPreparo">Preparo</h4>
+            </div>
+            <div class="exibepedido entregando">
+                <h4 class="tituloEntregando">Entregando</h4> 
+            </div>
+            <div class="exibepedido concluido" >
+                <h4 class="tituloConcluido">Concluido</h4>
+            </div>
+        </section><!-- class="exibicao" -->
+    </div><!-- container-pedido-->
+
+    <div id="containerHistorico" class="invisivel">
+        <h1>historico</h1>
+        <h3>Página em construção</h3>
+        <br>
+        <br>
+        <section class="containerExibeCaixas">
+        </section>
+    </div>
+
+    <div id="containerFinanceiro" class="invisivel">
+        <h1>financeiro</h1>
+        <h3>Página em construção</h3>
+    </div>
+
+</main>
+
+
+
+</body>
+
+</html>

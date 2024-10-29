@@ -1,0 +1,115 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url(styleComponentes/financeiro.css);
+@import url(styleComponentes/frete.css);
+@import url(styleComponentes/historico.css);
+@import url(styleComponentes/pagamento.css);
+@import url(styleComponentes/cardPedido.css);
+@import url(styleComponentes/mediaquery.css);
+@import url(styleComponentes/modalPedido.css);
+@import url(styleComponentes/statusPedido.css);
+@import url(styleComponentes/subHeader.css);
+@import url(styleComponentes/caixa.css);
+@import url(styleComponentes/selectInModal.css);
+@import url(styleComponentes/btnSetasScrool.css);
+@import url(styleComponentes/cardCopoPrevia.css);
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins';    
+     
+    --cor-hover: rgb(141, 24, 131);
+    --cor-primaria: rgb(190, 30, 177);
+
+    --cor-fila-light: rgb(233, 231, 231);
+    --cor-fila: rgb(151, 140, 140);
+
+    --cor-preparo-light: rgb(224, 228, 250);
+    --cor-preparo:  rgb(165, 158, 67);
+
+    --cor-entregando-light: rgb(241, 245, 220);
+    --cor-entregando:  rgb(106, 97, 192);
+
+    --cor-concluido-light: rgb(220, 245, 223);
+    --cor-concluido: rgb(9, 153, 21);
+
+    --cor-borda-suave: rgb(221, 215, 215);
+
+    --entrada-financa-normal: rgb(16, 153, 16);
+    --entrada-financa-light: rgba(0, 128, 0, 0.623);
+    --entrada-financa-fundoIcone: rgba(34, 192, 34, 0.048);
+
+    --saida-financa-normal: rgb(245, 21, 21);
+    --saida-financa-light: rgba(214, 20, 20, 0.623);
+    --saida-financa-fundoIcone: rgba(216, 52, 52, 0.048);
+}
+
+
+body{
+    /* overflow-x: hidden;  */
+    background-color: rgba(255, 255, 255, 0.521);
+}
+
+header{
+    display: flex;
+    height: 6em;
+    border-bottom: solid 1px var(--cor-borda-suave);
+}
+header div{
+    width: 50%;
+}
+header img{
+    margin-left: 1.2em;
+    margin-top: 0.7em;
+    width: 3.8em;
+}
+ul{
+    margin-top: 2em;
+    display: flex;
+    list-style: none;
+    gap: 2em;
+}
+
+.menu{
+    display: flex;
+    justify-content: end;
+    padding-right: 2em;
+}
+.menu button{
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--cor-hover);
+}
+
+.menu button:hover{
+    font-weight: 700;
+    color: var(--cor-hover);
+}
+
+.invisivel{
+    display: none;
+}
+
+button{
+    cursor: pointer;
+}
+
+input{
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    opacity: 1
+}
+
+#carrinhoPedido{
+    width: 300px;  /* Largura da div */
+    height: 400px; /* Altura da div */
+    border-bottom: 1px solid #ccc; /* Borda para visualização */
+    padding: 10px;
+    overflow-y: auto; /* Permite rolar na vertical */
+}

@@ -1,0 +1,26 @@
+
+
+@media (max-width: 870px){
+
+    /* card pedido */
+    .cardPedido{
+        width: 68%;
+    }
+    .concluido{
+        visibility: hidden;
+    }
+    .exibepedido{
+        min-width: 33%;
+    }
+}
+
+@media (max-width: 650px){
+
+    /* .menu ul{
+        visibility: hidden;
+    } */
+    .menu button i{
+        visibility: visible;
+    }
+}
+ 

@@ -1,0 +1,29 @@
+
+
+button.moveUp, 
+button.moveDown{
+  background-color: transparent;
+  border: none;
+  margin-left: -4em;
+}
+
+button.moveUp{
+  margin-top: 7em;
+}
+
+button.moveDown{
+  margin-left: -1.4em;
+  transform: translateY(3em);
+}
+
+i.moveDown,
+i.moveUp {
+  border-radius: 50%;
+  border: solid 1px var(--cor-hover);
+  color: var(--cor-hover);
+}
+
+.carrinhoPedido{
+  margin-top: 0.5em;
+  margin-left: -0.5em;
+}

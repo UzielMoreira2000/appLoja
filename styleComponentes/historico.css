@@ -1,0 +1,84 @@
+
+
+#containerHistorico{
+    max-width: 70%;
+    border-radius: 10px;
+    margin-top: 3em;
+    margin-left: 5em;
+    padding: 1em 1em 2em 2em;
+    background-color: white;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.pointCardCaixa{
+    display: flex; 
+    justify-content: space-between;
+    color: gray;
+    margin-bottom: -4em;
+}
+
+.pointCardCaixa .cola{
+    margin-left: 1em;
+}
+
+.pointCardCaixa .cola img{
+    border-radius: 50%;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+.pointCardCaixa .colb{
+    margin-right: 3em;
+}
+
+.valor{
+    margin-top: 0.7em;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.formaPagamento{
+    margin-left: 2em;
+}
+
+.detalhesPedidoHistorico{
+    margin-top: 1em;
+}
+
+.detalhesVisivel{
+    transform: translateX(60%);
+    margin: 2em;
+}
+
+.objItem{
+    margin-bottom: 0.4em;
+}
+
+.novaDataHistorico{
+    color: rgba(40, 42, 44, 0.644);
+    border-top: 1px solid rgba(40, 42, 44, 0.103);
+    border-bottom: 1px solid rgba(40, 42, 44, 0.103);
+    padding-bottom: 4em;
+}
+
+.pointCardCaixa:nth-child(1){
+    margin-top: 2em;
+}
+
+.topoData{
+    font-size: 1.2em;
+}
+
+.formaPagamento{
+    transform: translateY(-2.2em);
+    margin-left: 6em;
+}
+
+
+
+

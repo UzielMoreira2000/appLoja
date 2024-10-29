@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Historico </title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+    <script src="scripts/api.js" defer></script>
+    <script src="scripts/data_Time.js" defer></script>
+    <script src="scripts/localStorage.js" defer></script>
+
+    <script src="scripts/exibirHistorico/cabecalhoDatasHistorico.js" defer></script>
+
+    <script src="scripts/exibirLancamentos/exibirLancamentosAutomatico.js" defer></script>
+    <script src="scripts/exibirLancamentos/exibirLancamentosManuais.js" defer></script>
+
+</head>
+
+<body onload="apiGet()">
+    <header>
+        <div class="relogio"> 
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <button >
+                        <a href="AppLoja.html">    
+                            Pedido
+                        </a>
+                    </button>
+                </li>
+                <li>
+                    <button >
+                        <a href="">
+                            Historico
+                        </a>
+                    </button>
+                </li>
+                <li>
+                    <button >
+                        <a href="financeiro.html">
+                            Financeiro
+                        </a>
+                    </button>
+                </li>
+            </ul>
+        </div><!-- menu -->
+    </header>
+<main>
+
+    <div id="containerHistorico" class="">
+        <h2>Historico</h2>
+
+        
+
+        <p class="dadosHistorico"> </p>
+        <br>
+        <section class="containerExibeCaixas">
+            <p class="carregandoPedidosNoHistorico">
+                Carregando Pedidos ... 
+            </p>
+        </section>
+        <br><br><br>
+    </div>
+
+    <div id="containerFinanceiro" class="invisivel">
+        <h1>financeiro</h1>
+        <h3>Página em construção</h3>
+    </div>
+
+</main>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+
+.containerExibeCaixas{
+    display: flex;
+    flex-direction: column;
+}
+.cardCaixa{
+    padding: 1.5em 0em 0em 1.5em;
+    border: solid 1px var(--cor-borda-suave);
+    border-radius: 10px;
+    width: 50%;
+    margin: 0 auto;
+}
+.cardCaixa button{
+    cursor: pointer;
+    border: none;
+    text-decoration: underline;
+    background-color: transparent;
+}
+.cardCaixa .pedidos{
+    display: none;
+    font-size: 13px;
+}
+
+

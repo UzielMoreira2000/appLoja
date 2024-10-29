@@ -1,0 +1,49 @@
+
+.divPagamento{
+    display: flex;
+    padding: 2em;
+    color: gray;
+    justify-content: space-between;
+}
+.divPagamento section{
+    width: 50%;
+}
+.divPagamento label{
+    color: gray;
+}
+.idPedidoPagamento .valor{
+    color: gray;
+}
+.divPagamento h3{
+    margin-top: -5%;
+}
+
+
+
+
+button.aceitarFormaPagamento{
+    border: none;
+    background-color:  transparent;
+    transform: translateY(-1.5em);
+    margin-left: 13em;
+}
+i.aceitarFormaPagamento{
+    border-radius: 50%;
+    border: solid 1px var(--cor-primaria);
+}
+i.aceitarFormaPagamento :before{
+    color: solid 1px var(--cor-primaria);
+}
+
+button.fecharPagamento{
+    background-color:  transparent;
+    transform: translateY(-2.5em);
+    margin-left: 95%;
+    border: none;
+}
+i.fecharPagamento{
+    transform: scale(1.2);
+    color: solid 1px red;
+    border-radius: 50%;
+    border: solid 1px red;
+}

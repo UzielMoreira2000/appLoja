@@ -1,0 +1,38 @@
+
+
+/* Novo Pedido */
+div.novoPedido{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px var(--cor-borda-suave);
+    padding: 1em;
+}
+
+.btnNovoPedido,
+.addNovoLancamento{
+    background-color: var(--cor-primaria);
+    border-radius: 50px;
+    border: none;
+    padding: 8px 45px 8px 45px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+
+.btnNovoPedido{
+    display: flex;
+    position: fixed;
+    bottom: 2em;
+    left: 2em;
+    z-index: 1;
+}
+.bx-plus-circle,
+.bx-lock-alt{
+
+    margin-left: -1.5em;
+    transform: scale(1.8); 
+    margin-right: 2em;
+    margin-top: 0.3em;
+}
+
+    

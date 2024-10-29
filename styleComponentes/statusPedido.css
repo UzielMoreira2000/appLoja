@@ -1,0 +1,33 @@
+
+section.exibicao{
+    display: flex;
+}
+
+.exibepedido{
+    width: 33.33%;
+    height: 100em;
+    border-right:1px solid var(--cor-borda-suave);
+}
+
+.exibicao h4{
+    padding-left: 1em;
+    padding-top: 1em;
+    font-weight: 400;
+    border-bottom:1px solid var(--cor-borda-suave);
+}
+
+.tituloFila, .infoFila{
+    color: var(--cor-fila);
+}
+.tituloPreparo{
+    color: var(--cor-preparo);
+}
+.tituloEntregando{
+    color: var(--cor-entregando);
+}
+.tituloConcluido{
+    color: var(--cor-concluido);
+} 
+/* 
+*/
+
