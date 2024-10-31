@@ -72,7 +72,13 @@ document.addEventListener("click", (e) => {
         parentEl.remove();
         excluiPedidoLocalStorage(id)
     }
-    
+
+    salvaPosicaoPedidoMovido(statusPedido, id)
+})
+
+
+function salvaPosicaoPedidoMovido(statusPedido, id){
+    const pedidos = getPedidosLocalStorage()
     pedidos.forEach((pedido) => {
         if(pedido.id == id){
             switch(statusPedido){
@@ -92,7 +98,7 @@ document.addEventListener("click", (e) => {
         }
     }) 
     localStorage.setItem("arrayPedidos", JSON.stringify(pedidos))
-})
+}
 
 
 

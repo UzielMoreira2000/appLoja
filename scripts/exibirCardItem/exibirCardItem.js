@@ -23,7 +23,7 @@ function exibirCardItemCarrinho(){
             <br>
             ${item.tipoItem} ${tamanhoCopo} - ${item.quantidade}x 
             <br>
-            Preço: ${item.valorPorItem}R$  
+            Preço: ${parseFloat(Number(item.valorPorItem).toFixed(1))}R$  
             <br>
             ${listaAdcs}
             <button id="" class="" onclick="excluirItem(${item.id})">

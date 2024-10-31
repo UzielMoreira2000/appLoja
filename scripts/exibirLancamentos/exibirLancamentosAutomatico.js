@@ -67,7 +67,7 @@ function exibeLancamentosAutomaticos(pedido){
                 font-weight: 700;
                 font-size: 1.2em; ">
                 <p class="getValue${pedido.data.mes}${pedido.id}"> 
-                    ${pedido.valor} 
+                    ${pedido.valor} R$
                 </p>
                 <button class="btnCopos" onclick="verDetalhes('${pedido.id}')"
                     style="color: var(--${tipoDePagamento}-financa-normal);">

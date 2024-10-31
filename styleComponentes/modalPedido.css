@@ -67,17 +67,16 @@
 #btnAtualizar,
 #btnAddPedido {
   display: flex;
-  align-items: center;
   justify-content: center;
   outline: none;
   border-radius: 20px; 
   padding: 8px 10px; 
-  width: 160%;
+  width: 150%;
   border: none; 
-  margin-bottom: -2em;
-  margin-left: -100%;
   background-color: var(--cor-hover);
   color: white;
+  position: relative;
+  top: 85%;
 }
 
 #btnAddBebidas,

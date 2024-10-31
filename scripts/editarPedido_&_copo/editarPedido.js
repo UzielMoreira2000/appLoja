@@ -82,7 +82,7 @@ function atualizarPedido(){
     }
     pedido = {
         pagamento           : [],
-        localConsumo        : 'local',
+        localConsumo        : f_localConsumo().local,
         tipoPagamento       : 'entrada',
         tipoTransferencia   : 'automatica',
         data                : time,
@@ -90,8 +90,10 @@ function atualizarPedido(){
         qtdItens            : qtdItens,
         id                  : idPedidoEdit,
         status              : statusPedidoInEdit,
-        valor               : funcaoIinfoCarrinho()+"R$",
+        valor               : funcaoIinfoCarrinho(),
+        valorFrete          : f_localConsumo().valor,
     }
+    console.log(pedido)
     exibirPedido(pedido, save=1);
     location.reload();
 }

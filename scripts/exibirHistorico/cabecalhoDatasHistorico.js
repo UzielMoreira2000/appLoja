@@ -4,8 +4,8 @@ function cabecalhoDatasHistorico(){
     var dia       = 0
     var arrayData = []
     var listaDias = []
-    var spanNovaData = ''
-    const lancamentos = JSON.parse(localStorage.getItem("arrayPedidosApi"))||[]
+    var spanNovaData  = ''
+    const lancamentos = getLancamentosApiLocalStorage()
     lancamentos.forEach(lancamento => {
         dia = parseInt(lancamento.data.dia)
         mes = parseInt(lancamento.data.mes)
@@ -39,7 +39,7 @@ function cabecalhoDatasHistorico(){
 
 
 function HUB_Manual_ou_Automatico(dias){
-    const lancamentos = JSON.parse(localStorage.getItem("arrayPedidosApi"))||[] 
+    const lancamentos = getLancamentosApiLocalStorage() 
     lancamentos.forEach(lancamento => {
         dias.forEach(dia => {
             if(lancamento.data.dia == dia){

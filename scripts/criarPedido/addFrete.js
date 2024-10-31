@@ -12,19 +12,20 @@ function labelInputValue_Frete (valor=1){
             type="number" 
             value="${valor}" min="1" onclick="calculaFrete()">
         </div>  `        
+        valorFrete = 1
     }
     if (checkLocal.checked) {
         console.log(checkLocal)
         valorFrete = 0
         labelItem.innerHTML = `${textItem}`
     }
+    funcaoIinfoCarrinho()
 }
 
 
 var valorFrete = 0
 function calculaFrete(){
     valorFrete = parseInt(document.querySelector('#qtdentregar').value)
-    console.log(valorFrete)
     funcaoIinfoCarrinho()
     return valorFrete
 }

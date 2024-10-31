@@ -28,17 +28,17 @@ function addNovoLancamentoAutomatico(){
         valor += item.valorPorItem
     })
     const pedido = {
-        status              : "fila",
-        itens               : itens,
-        data                : data_Time(),
-        id                  : data_Time().fullData,
-        qtdItens            : qtdItens,
-        localConsumo        : f_localConsumo().local,
-        valorFrete          : f_localConsumo().valor,
-        valor               : funcaoIinfoCarrinho()+"R$",
         pagamento           : [],
+        localConsumo        : f_localConsumo().local,
         tipoPagamento       : 'entrada',
-        tipoTransferencia   : 'automatica'
+        tipoTransferencia   : 'automatica',
+        data                : data_Time(),
+        itens               : itens,
+        qtdItens            : qtdItens,
+        id                  : data_Time().fullData,
+        status              : "fila",
+        valor               : funcaoIinfoCarrinho(),
+        valorFrete          : f_localConsumo().valor,
     }
     exibirPedido(pedido)
     savePedidosLocalStorage(pedido)

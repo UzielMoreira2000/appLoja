@@ -38,7 +38,7 @@
 
 </head>
 
-<body onload="carregaConcluidosApi()">
+<body>
     <header>
         <div class="relogio" > 
         </div>
@@ -91,7 +91,7 @@
                         <button id="btnAcai">Açais</button>
                         <button id="btnBebidas">Bebidas</button>
                         <button id="btnSalgados">Salgados</button>
-                        <!-- <button id="btnDoces">Doces</button> -->
+                        <button id="btnDoces">Doces</button>
                     </div>
                     <div class="opcoes">
                         <div class="col-a">
@@ -107,6 +107,13 @@
                                 Entrega</label>
                             <br><br>
 
+                            <button id="btnAtualizar" onclick="atualizarPedido()">
+                                Atualizar Pedido
+                            </button>
+                            <button id="btnAddPedido" onclick="addNovoLancamentoAutomatico()">
+                                Adicionar Pedido
+                            </button>
+                            
                             <div class="doces">
                                 <label for="comsumirEm"><p> Doces </p></label>
                                 <input id="pirulitoBig" name="" type="checkbox" 
@@ -293,16 +300,11 @@
                                 Adicionar Salgados
                             </button>
                            <br>
-                            <!-- <button id="btnAddDoces"
+                            <button id="btnAddDoces"
                             onclick="addItem('doce')">
                                 Adicionar Doces
-                            </button> -->
-                            <button id="btnAtualizar" onclick="atualizarPedido()">
-                                Atualizar Pedido
                             </button>
-                            <button id="btnAddPedido" onclick="addNovoLancamentoAutomatico()">
-                                Adicionar Pedido
-                            </button>
+                            
                         </div><!--col-b -->
 
                         <div class="col-c">

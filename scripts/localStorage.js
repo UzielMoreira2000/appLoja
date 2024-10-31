@@ -8,13 +8,13 @@ const getPedidosLocalStorage = () =>{
 
 const buscaPedido = (id) =>{
     const pedidos = getPedidosLocalStorage()
-    var pedidoApi = {}
-    pedidos.forEach(pedido => {
-        if(pedido.id == id){
-            pedidoApi = pedido
+    var pedido = {}
+    pedidos.forEach(index => {
+        if(index.id == id){
+            pedido = index
         }
     })
-    return pedidoApi 
+    return pedido
 }
 
 
@@ -28,7 +28,9 @@ const savePedidosLocalStorage = (pedido) =>{
 const loadPedidos  = () =>{
     const pedidos  = getPedidosLocalStorage()
     pedidos.forEach((pedido) => {
-        exibirPedido(pedido, save=0)
+        if(document.querySelector('.concluido')){
+            exibirPedido(pedido, save=0)
+        }
     })
 }
 
@@ -37,7 +39,7 @@ const excluiPedidoLocalStorage = (id) =>{
     var qtdPedidos      = 0 
     const pedidos       = getPedidosLocalStorage()
     const filtroPedidos = pedidos.filter((pedido) => pedido.id != id )
-    filtroPedidos.forEach(pedido => {
+    filtroPedidos.forEach(() => {
         qtdPedidos ++
     })
     if(qtdPedidos == 0){
@@ -55,8 +57,15 @@ function setItemLocalStorageApi(lancamentos){
         lancamento = JSON.parse(lancamento.detalhes)
         arrayLancamentos.push(lancamento)
     })
-    localStorage.setItem("arrayPedidosApi", JSON.stringify(arrayLancamentos))
+    localStorage.setItem("arrayGetApi", JSON.stringify(arrayLancamentos))
 }
+
+
+function getLancamentosApiLocalStorage(){
+    const lancamentos = JSON.parse(localStorage.getItem("arrayGetApi")) || [] ;
+    return lancamentos;
+}
+
 
 
 loadPedidos()

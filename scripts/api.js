@@ -4,7 +4,7 @@ var novaData     = 0
 var primeiraData = 0
 var listaDatas   = []
 
-const urlApiTest = `https://script.google.com/macros/s/AKfycbzxNezEmQV5lixoGl_MWkheQ8uZceOvHalHkjZbn4MPm33MrRhPlOFnSswUfSlGFuZp/exec`
+const urlApiTest = ``
 
 const urlApiProd = `https://script.google.com/macros/s/AKfycbw0vTCIJOsui2RndEfNFITXJ_D7Zb8TueVxn0sNq4oGJnH5lh3AunbWnl92GIvK9wbUgw/exec`
 
@@ -40,7 +40,7 @@ function apiGet(){
         return data.lancamentos
     })
     .then((lancamentos) =>{
-        localStorage.setItem("arrayPedidosApi", JSON.stringify([]))
+        localStorage.setItem("arrayGetApi", JSON.stringify([]))
         setItemLocalStorageApi(lancamentos)
         cabecalhoDatasHistorico()
         document.querySelector('.carregandoPedidosNoHistorico').style.display = 'none'

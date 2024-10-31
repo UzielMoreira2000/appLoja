@@ -1,6 +1,6 @@
 
 
-function exibirPedido(pedido){
+function exibirPedido(pedido, save){
     var objItem      = ''
     var objFrete     = ''
     var tamanhoCopo  = ''
@@ -31,7 +31,6 @@ function exibirPedido(pedido){
     }
     if(pedido.valorFrete == 0){
         objFrete = ''
-        console.log(pedido.valorFrete)
     }
 
     if(pedido.status != 'concluido'){
@@ -44,7 +43,7 @@ function exibirPedido(pedido){
                 <i class='moveProximo bx bx-chevron-right'></i> 
                 </button>
                 <br>
-                Valor Pedido:${pedido.valor} 
+                Valor Pedido:  <b> ${pedido.valor} R$ </b>
                 <br>
                 <button class="btnCopos" onclick="verDetalhes('${pedido.id}')">
                 Ver detalhes do pedido
@@ -55,7 +54,7 @@ function exibirPedido(pedido){
                 </div> 
                 <br>
                 <button>
-                <br> <i class='excluir bx bx-x'></i>
+                <i onclick="excluiPedidoLocalStorage('${pedido.id}')" class='excluir bx bx-x'></i>
                 </button> 
                 <button>
                 <i onclick="editarPedido('${pedido.id}')"
@@ -92,7 +91,10 @@ function exibirPedido(pedido){
         case "concluido":
             document.querySelector('.concluido').appendChild(cardpedido)
         break
-    }    
+    }   
+    if(save == 1){
+        savePedidosLocalStorage(pedido)
+    } 
 }
 
 

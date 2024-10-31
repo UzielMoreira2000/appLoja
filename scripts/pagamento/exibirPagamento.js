@@ -33,7 +33,7 @@ function pagamento(id){
         Total do pedido <b class="valor">${lancamento.valor}</b>
         </h3><br>
         <div class="calculadora"> Valor a ser pago: 
-            <strong class="valor-a-Pagar"> ${lancamento.valor} </strong>
+            <strong class="valor-a-Pagar"> ${parseFloat(new Number(lancamento.valor).toFixed(1))} </strong>
         </div><br><br><br><br>
         <button class="aceitarFormaPagamento invisivel" onclick="aceitarFormaPagamento()">
             Concluir pagamento
@@ -49,6 +49,7 @@ const fecharPagamento = (id) =>{
     excluiPedidoLocalStorage(pedido.id)
     savePedidosLocalStorage(pedido)
     modal.classList.remove('active')
+    document.querySelector('.divPagamento').innerHTML =''
 }
 
 
