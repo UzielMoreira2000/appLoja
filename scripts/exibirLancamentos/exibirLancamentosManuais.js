@@ -55,8 +55,11 @@ function exibeLancamentosManuais(pedido){
     </section>
     <br>
     `
-    var dia = document.querySelector(`#novaDataHistorico${pedido.data.dia}`)
-    dia.appendChild(cardcaixa)
+    // var dia = 
+    document.querySelector(`#novaDataHistorico${pedido.data.dia}`)
+    // console.log(cardcaixa)
+    
+    // dia.appendChild(cardcaixa)
 }
 
 

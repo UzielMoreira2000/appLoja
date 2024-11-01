@@ -55,6 +55,7 @@ function addNovoLancamento(){
     retornaAppLoja_Financeiro()
 }
 
+
 function retornaAppLoja_Financeiro(){
     setTimeout(function retornaTime(){
         window.location='financeiro.html'

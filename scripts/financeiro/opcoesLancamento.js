@@ -2,6 +2,7 @@
 
 var opcoes = []
 
+
 const opcoesSaida = [
     "outros",
     "marajo Açai", "duas Imãs", "cometa", "verdurão soares",
@@ -12,6 +13,7 @@ const opcoesEntrada = [
     "outros",
     "pagamento inadimplência", "projeto", "extorno de pedido", "lamçamento atrasado" ,  
 ]
+
 
 function checkOpcaoLancamento(tipo='saida'){
     const selectElement = document.getElementById('cliente-select')

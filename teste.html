@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="div"></div>
+
+    <script>
+        const pedidos = JSON.parse(localStorage.getItem("arrayGetApi")) || [] ;
+        console.log(pedidos)
+
+        lista.short
+
+        function printLista(lista){
+            lista.forEach(pedido => {
+                document.querySelector('div').innerHTML += `<br>
+                    <b>
+                        ${pedido.data.dia}/${pedido.data.mes}/${pedido.data.ano}
+                        <br>${pedido.data.hora}:${pedido.data.min}:${pedido.data.sec}
+                        <br><br>
+                    </b>
+                `
+            })
+        }
+        
+
+    </script>
+</body>
+</html>

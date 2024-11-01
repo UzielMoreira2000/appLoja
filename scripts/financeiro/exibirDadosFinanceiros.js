@@ -10,29 +10,32 @@ function f_dadosHistorico(){
     dadosHistorico.innerHTML = `
     <b> Entradas: </b>
     <br>
-    Total de entradas do dia ${dia}: <strong> ${totalDia} </strong>R$ 
+    Total de entradas do dia ${dia}: <strong> ${totais().entradas.dia} </strong>R$ 
     <br>
-    Total de entradas de ${mes}: <strong> ${totalMes} </strong>R$ 
+    Total de entradas de ${mes}: <strong> ${totais().entradas.mes} </strong>R$ 
     <br>
-    Total de entradas do ano de ${ano}: <strong> ${totalAno} </strong>R$ 
+    Total de entradas do ano de ${ano}: <strong> ${totais().entradas.ano} </strong>R$ 
     <br>
     <br>
     <b> Saidas:  </b>
     <br>
-    Total de saidas do dia ${dia}: <strong> ${totais().saidasDia} </strong>R$ 
+    Total de saidas do dia ${dia}: <strong> ${totais().saidas.dia} </strong>R$ 
     <br>
-    Total de saidas de ${mes}: <strong> ${totais().saidasMes} </strong>R$ 
+    Total de saidas de ${mes}: <strong> ${totais().saidas.mes} </strong>R$ 
     <br>
-    Total de saidas do ano de ${ano}: <strong> ${totais().saidasAno} </strong>R$ 
+    Total de saidas do ano de ${ano}: <strong> ${totais().saidas.ano} </strong>R$ 
     <br>
     <br>
     <b> Saldos:  </b>
     <br>
-    Saldo do dia ${dia}: <strong> ${totais().saldoDia} </strong>R$ 
+    Saldo do dia ${dia}: <strong> ${totais().saldos.dia} </strong>R$ 
     <br>
-    Saldo de ${mes}: <strong> ${totais().saldoMes} </strong>R$ 
+    Saldo de ${mes}: <strong> ${totais().saldos.mes} </strong>R$ 
     <br>
-    Saldo do ano de ${ano}: <strong> ${totais().saldoMes} </strong>R$
+    Saldo do ano de ${ano}: <strong> ${totais().saldos.ano} </strong>R$
+    <br><br>
+    <b>Fechamento de caixa</b>
+    <br> ${calcCaixa()}
     `
 }
 

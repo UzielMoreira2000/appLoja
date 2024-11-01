@@ -40,6 +40,7 @@ function cabecalhoDatasHistorico(){
 
 function HUB_Manual_ou_Automatico(dias){
     const lancamentos = getLancamentosApiLocalStorage() 
+    
     lancamentos.forEach(lancamento => {
         dias.forEach(dia => {
             if(lancamento.data.dia == dia){
@@ -47,6 +48,7 @@ function HUB_Manual_ou_Automatico(dias){
                     exibeLancamentosAutomaticos(lancamento)
                 }
                 if(lancamento.tipoTransferencia == 'manual'){
+                    console.log(lancamento)
                     exibeLancamentosManuais(lancamento)
                 }
             }

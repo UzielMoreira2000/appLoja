@@ -27,7 +27,6 @@ function exibirPedido(pedido, save){
 
     if(pedido.valorFrete > 0){
         objFrete = `<br><b>Frete:</b> ${pedido.valorFrete} R$`
-        console.log(pedido.valorFrete)
     }
     if(pedido.valorFrete == 0){
         objFrete = ''

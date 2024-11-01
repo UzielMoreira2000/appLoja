@@ -1,9 +1,5 @@
 
 
-var novaData     = 0
-var primeiraData = 0
-var listaDatas   = []
-
 const urlApiTest = ``
 
 const urlApiProd = `https://script.google.com/macros/s/AKfycbw0vTCIJOsui2RndEfNFITXJ_D7Zb8TueVxn0sNq4oGJnH5lh3AunbWnl92GIvK9wbUgw/exec`
@@ -42,10 +38,12 @@ function apiGet(){
     .then((lancamentos) =>{
         localStorage.setItem("arrayGetApi", JSON.stringify([]))
         setItemLocalStorageApi(lancamentos)
-        cabecalhoDatasHistorico()
+        cabecalhoDatasHistorico() // chama hub exibe pedido
         document.querySelector('.carregandoPedidosNoHistorico').style.display = 'none'
     })
 }
+
+
 
 
 

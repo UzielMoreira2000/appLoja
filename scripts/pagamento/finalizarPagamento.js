@@ -1,17 +1,12 @@
 
 
-onkeyup = () => {
-    calculadoraPagamento()
-}
-
-
 function labelInputValue_Pagamento(item, qtdItem=1) {
     const labelItem = document.querySelector(`.${item}`)
     const checkItem = document.querySelector(`#${item}`)
     const textItem  = document.querySelector(`label.${item}`).textContent
     if (checkItem.checked) {
         labelItem.innerHTML += `
-        <input class="qtdItem" id="qtd${item}" type="number" 
+        <input class="inputValuePagamento qtdItem" id="qtd${item}" type="number" 
         value="${qtdItem}" min="0" onclick="calculadoraPagamento()" >`        
     }
     if (!checkItem.checked) {

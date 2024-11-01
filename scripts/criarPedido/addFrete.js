@@ -8,9 +8,10 @@ function labelInputValue_Frete (valor=1){
     if (checkItem.checked) {
         labelItem.innerHTML = `${textItem}
         <div class="divFrete">
-            <input class="qtdItem" id="qtdentregar" 
+            <input class="inputValorFrete qtdItem" id="qtdentregar" 
             type="number" 
-            value="${valor}" min="1" onclick="calculaFrete()">
+            value="${valor}" min="1" onclick="calculaFrete()
+            ">
         </div>  `        
         valorFrete = 1
     }
@@ -29,6 +30,10 @@ function calculaFrete(){
     funcaoIinfoCarrinho()
     return valorFrete
 }
+
+
+
+
 
 
 

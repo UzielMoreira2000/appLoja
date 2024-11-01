@@ -48,8 +48,7 @@ const fecharPagamento = (id) =>{
     pedido.status = 'entregando'
     excluiPedidoLocalStorage(pedido.id)
     savePedidosLocalStorage(pedido)
-    modal.classList.remove('active')
-    document.querySelector('.divPagamento').innerHTML =''
+    location.reload();
 }
 
 
