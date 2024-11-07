@@ -1,7 +1,5 @@
 
 
-const dadosHistorico = document.querySelector('.dadosHistorico')
-
 function totais() {
     const lancamentos  = getLancamentosApiLocalStorage()
     const arrayEntrada = calcEntradas(lancamentos)
@@ -16,29 +14,29 @@ function totais() {
 }
 
 
-function calcCaixa(){
+function totalDiaSelect(data){
+    var totalDia = 0
+    var dinheiro = 0
     const lancamentos = getLancamentosApiLocalStorage()
-    var valueDiaAnterior = 0
-    var valueDiaCorrente = 0
     lancamentos.forEach(lancamento => {
-        var valor = lancamento.valor
-        if(lancamento.tipoPagamento == 'entrada'){
-            if(lancamento.data.dia  == data_Time().dia){
-                valueDiaCorrente += valor
-                console.log(lancamento.data.dia)
-            }
-            if( lancamento.data.dia == lancamento.data.dia - 1){
-                console.log(lancamento.data.dia)
-                valueDiaAnterior += valor
+        if(lancamento.data.dia == data.dia ){
+            if(lancamento.tipoPagamento == 'entrada'){
+                totalDia += parseFloat((lancamento.valor).toFixed(2))
+                lancamento.pagamento.forEach(pagamento => {
+                    if(pagamento.forma === 'dinheiro'){
+                        dinheiro += parseFloat((pagamento.valor).toFixed(2))
+                    }
+                })
             }
         }
     })
-    const caixa = 
-        (valueDiaCorrente + valueDiaAnterior) - (totais().saidas.diaDinheiro)
-    console.log('fechamento do caixa no dia:' + caixa)
-    return caixa
+    const objExport ={
+        dia      : totalDia,
+        dinheiro : dinheiro,
+    }
+    console.log(objExport)
+    return objExport
 }
-calcCaixa()
 
 
 function calcEntradas(lancamentos){
@@ -119,7 +117,7 @@ function calcEntradas(lancamentos){
 
 
 function calcSaidas(lancamentos){
-    var diaDinheiro = 0
+    var dinheiro = 0
     var total       = 0
     var diaCorrente = 0  
     var mesCorrente = 0
@@ -145,7 +143,7 @@ function calcSaidas(lancamentos){
                 lancamento.pagamento.forEach(pagamento => {
                     if(lancamento.forma == 'dinheiro'){
                         console.log(pagamento.forma)
-                        diaDinheiro += valor
+                        dinheiro += valor
                     }
                 })
             }if(lancamento.data.mes == data_Time().mes){
@@ -181,7 +179,7 @@ function calcSaidas(lancamentos){
         }
     })
     const saidas = {
-        diaDinheiro : diaDinheiro,
+        dinheiro : dinheiro,
         total       : total,
         dia         : diaCorrente,
         mes         : mesCorrente,

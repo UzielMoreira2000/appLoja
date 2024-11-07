@@ -25,10 +25,10 @@ const savePedidosLocalStorage = (pedido) =>{
 }
 
 
-const loadPedidos  = () =>{
+const loadPedidos  = () => {
     const pedidos  = getPedidosLocalStorage()
     pedidos.forEach((pedido) => {
-        if(document.querySelector('.concluido')){
+        if(pedido.data.dia == data_Time().dia){
             exibirPedido(pedido, save=0)
         }
     })

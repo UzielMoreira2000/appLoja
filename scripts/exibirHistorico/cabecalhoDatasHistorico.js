@@ -1,5 +1,8 @@
 
 
+const dadosHistorico = document.querySelector('.dadosHistorico')
+
+
 function cabecalhoDatasHistorico(){
     var dia       = 0
     var arrayData = []
@@ -24,7 +27,8 @@ function cabecalhoDatasHistorico(){
             <span class="topoData"><br>
                 ${data.dia}
                 ${mesExtenso(parseInt(data.mes))}
-                ${data.ano}
+                ${data.ano} - R$
+                ${totalDiaSelect(data).dia} , dinheiro: ${totalDiaSelect(data).dinheiro}
             </span>
         </div>`
         ultimoSpan = document.querySelector(`#novaDataHistorico${data.dia}`)
@@ -40,7 +44,6 @@ function cabecalhoDatasHistorico(){
 
 function HUB_Manual_ou_Automatico(dias){
     const lancamentos = getLancamentosApiLocalStorage() 
-    
     lancamentos.forEach(lancamento => {
         dias.forEach(dia => {
             if(lancamento.data.dia == dia){
@@ -48,7 +51,6 @@ function HUB_Manual_ou_Automatico(dias){
                     exibeLancamentosAutomaticos(lancamento)
                 }
                 if(lancamento.tipoTransferencia == 'manual'){
-                    console.log(lancamento)
                     exibeLancamentosManuais(lancamento)
                 }
             }

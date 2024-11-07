@@ -81,7 +81,8 @@ function exibeLancamentosAutomaticos(pedido){
         </div>
     </section>
     <br>`
-    var dia = document.querySelector(`#novaDataHistorico${pedido.data.dia}`)
+    var dia = 
+        document.querySelector(`#novaDataHistorico${parseInt(pedido.data.dia)}`)
     dia.appendChild(cardcaixa)
     return cardcaixa
 }
