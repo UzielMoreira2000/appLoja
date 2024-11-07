@@ -16,10 +16,10 @@
         var i = i_Split_Join
         console.log(i)
       printListaAdcs.innerHTML += `<br>
-       <input id="${i}" name="${i}" type="checkbox" class="adcComum adc"
+        <input id="${i}" name="${i}" type="checkbox" class="adcComum adc"
          onclick="labelInputValue_Item('${i}')">
 
-         <label id="${i}" for="">${adc}</label>
+        <label id="${i}" for="">${adc}</label>
       `
     })
  }
