@@ -1,6 +1,7 @@
 
 
-function labelInputValue_Frete (valor=1){
+
+function labelInputValue_Frete (valor=5){
     const labelItem = document.querySelector(`label#entregar`)
     const checkItem = document.querySelector(`input#entregar`)
     const textItem  = document.querySelector(`label.entregar`).textContent
@@ -13,7 +14,7 @@ function labelInputValue_Frete (valor=1){
             value="${valor}" min="1" onclick="calculaFrete()
             ">
         </div>  `        
-        valorFrete = 1
+        valorFrete = 5
     }
     if (checkLocal.checked) {
         console.log(checkLocal)

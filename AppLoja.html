@@ -227,61 +227,65 @@
                         </div><!-- col-a -->
 
                         <div class="col-b">
+                            <p>Selecione os Adicionais </p>
                             <div class="printListaAdcs"></div>
-                            <div class="acaiB" style="">
-                                <p>Selecione os Adicionais </p>
-                                <input id="leiteCondensado" name="leite condensado" 
-                                type="checkbox" class="adcComum adc" onclick="labelInputValue_Adicionais('leiteCondensado')">
-                                <label class="leiteCondensado" for="">leite condensado</label>
+                            <div class="acaiB" >
+                                <div class="adcs" style="display: none;">
+                                    <input id="leiteCondensado" name="leite condensado" 
+                                    type="checkbox" class="adcComum adc" onclick="labelInputValue_Adicionais('leiteCondensado')">
+                                    <label class="leiteCondensado" for="">leite condensado</label>
+                                    <br>
+                                    <input id="caldaDeChocolate" name="calda de chocolate" 
+                                    type="checkbox" class="adcComum adc" onclick="labelInputValue_Adicionais('caldaDeChocolate')">
+                                    <label class="caldaDeChocolate" for="">calda de chocolate</label>
+                                    <br>
+                                    <input id="caldaDeMorango" name="calda de morango" 
+                                    type="checkbox" class="adcComum adc" onclick="labelInputValue_Adicionais('caldaDeMorango')">
+                                    <label class="caldaDeMorango" for="">calda de morango</label>
+                                    <br>
+                                    <input id="granola" name="granola" onclick="labelInputValue_Adicionais('granola')"
+                                    type="checkbox" class="adcComum adc">
+                                    <label class="granola" for="">granola</label>
+                                    <br>
+                                    <input id="pacoca" name="pacoca" onclick="labelInputValue_Adicionais('pacoca')"
+                                    type="checkbox" class="adcComum adc">
+                                    <label class="pacoca" for="">paçoca</label>
+                                    <br>
+                                    <input id="ovomaltine" name="ovomaltine" onclick="labelInputValue_Adicionais('ovomaltine')"
+                                    type="checkbox" class="adcComum adc">
+                                    <label class="ovomaltine" for="">ovomaltine</label>
+                                    <br>
+                                    <input id="leiteNinho" name="leite ninho" onclick="labelInputValue_Adicionais('leiteNinho')"
+                                    type="checkbox" class="adcComum adc">
+                                    <label class="leiteNinho" for="">leite ninho</label>
+                                    <br>
+                                    <input id="morango" name="morango" onclick="labelInputValue_Adicionais('morango')"
+                                    type="checkbox" class="adcComum adc">
+                                    <label class="morango" for="">Morango</label>
+                                    <br>
+                                    <input id="uva" name="uva" onclick="labelInputValue_Adicionais('uva')"
+                                    type="checkbox" class="adcComum adc">
+                                    <label class="uva" for="">Uva</label>
+                                    <br>
+                                    <input id="banana" name="banana" onclick="labelInputValue_Adicionais('banana')"
+                                    type="checkbox" class="adcComum adc">
+                                    <label class="banana" for="">Banana</label>
+                                    <br>
+                                    <input id="nutella" name="nutella" onclick="labelInputValue_Adicionais('nutella')"
+                                    type="checkbox" class="adcPremium adc">
+                                    <label class="nutella" for="">Nutella</label>
+                                    <br>
+                                    <input id="mem" name="mem" onclick="labelInputValue_Adicionais('mem')"
+                                    type="checkbox" class="adcPremium adc">
+                                    <label class="mem" for="mem">M&m</label>
+                                    <br>
+                                    <input id="kitkat" name="kitkat" onclick="labelInputValue_Adicionais('kitkat')"
+                                    type="checkbox" class="adcPremium adc">
+                                    <label class="kitkat" for="kitkat">KitKat</label>
+                                </div>
+
                                 <br>
-                                <input id="caldaDeChocolate" name="calda de chocolate" 
-                                type="checkbox" class="adcComum adc" onclick="labelInputValue_Adicionais('caldaDeChocolate')">
-                                <label class="caldaDeChocolate" for="">calda de chocolate</label>
                                 <br>
-                                <input id="caldaDeMorango" name="calda de morango" 
-                                type="checkbox" class="adcComum adc" onclick="labelInputValue_Adicionais('caldaDeMorango')">
-                                <label class="caldaDeMorango" for="">calda de morango</label>
-                                <br>
-                                <input id="granola" name="granola" onclick="labelInputValue_Adicionais('granola')"
-                                type="checkbox" class="adcComum adc">
-                                <label class="granola" for="">granola</label>
-                                <br>
-                                <input id="pacoca" name="pacoca" onclick="labelInputValue_Adicionais('pacoca')"
-                                type="checkbox" class="adcComum adc">
-                                <label class="pacoca" for="">paçoca</label>
-                                <br>
-                                <input id="ovomaltine" name="ovomaltine" onclick="labelInputValue_Adicionais('ovomaltine')"
-                                type="checkbox" class="adcComum adc">
-                                <label class="ovomaltine" for="">ovomaltine</label>
-                                <br>
-                                <input id="leiteNinho" name="leite ninho" onclick="labelInputValue_Adicionais('leiteNinho')"
-                                type="checkbox" class="adcComum adc">
-                                <label class="leiteNinho" for="">leite ninho</label>
-                                <br>
-                                <input id="morango" name="morango" onclick="labelInputValue_Adicionais('morango')"
-                                type="checkbox" class="adcComum adc">
-                                <label class="morango" for="">Morango</label>
-                                <br>
-                                <input id="uva" name="uva" onclick="labelInputValue_Adicionais('uva')"
-                                type="checkbox" class="adcComum adc">
-                                <label class="uva" for="">Uva</label>
-                                <br>
-                                <input id="banana" name="banana" onclick="labelInputValue_Adicionais('banana')"
-                                type="checkbox" class="adcComum adc">
-                                <label class="banana" for="">Banana</label>
-                                <br>
-                                <input id="nutella" name="nutella" onclick="labelInputValue_Adicionais('nutella')"
-                                type="checkbox" class="adcPremium adc">
-                                <label class="nutella" for="">Nutella</label>
-                                <br>
-                                <input id="mem" name="mem" onclick="labelInputValue_Adicionais('mem')"
-                                 type="checkbox" class="adcPremium adc">
-                                <label class="mem" for="mem">M&m</label>
-                                <br>
-                                <input id="kitkat" name="kitkat" onclick="labelInputValue_Adicionais('kitkat')"
-                                type="checkbox" class="adcPremium adc">
-                                <label class="kitkat" for="kitkat">KitKat</label>
-                                <br><br>
                                 <button id="btnAddCopo" onclick="addCopo()">
                                     Adicionar Copo
                                 </button>

@@ -16,68 +16,67 @@ const moduloAdicionais = () => {
             adcsCheck.push(`${adcs[i].name}`)
         }
     }
-
     adcsCheck.forEach(adicional => {
-        switch (adicional) {
-            case "leite condensado":
-                adicional = 'leiteCondensado'
-                break
-            case "calda de morango":
-                adicional = 'caldaDeMorango'
-                break
-            case "calda de chocolate":
-                adicional = 'caldaDeChocolate'
-                break
-            case "leite ninho":
-                adicional = 'leiteNinho'
-                break
-        }
-        qtdItem = parseInt(document.getElementById(`qtd${adicional}`).value)
+        let nameId = adicional.split(' ').join('')
+        qtdItem = parseInt(document.querySelector(`#qtd${nameId}`).value)
         listaAdcs.push(item = {
             qtdItem     : qtdItem,
             adicional   : adicional,
         })
-        switch(adicional){
-            case "nutella":
-                addPremium += qtdItem*5
-            break
-            case "mem":
-                addPremium += qtdItem*4
-            break
-            case "kitkat":
-                addPremium += qtdItem*3
-            break
-            case "leiteCondensado":
-                addComum += qtdItem
-            break
-            case "caldaDeMorango":
-                addComum += qtdItem
-            break
-            case "caldaDeChocolate":
-                addComum += qtdItem
-            break
-            case "leiteNinho":
-                addComum += qtdItem
-            break
-            case "granola":
-                addComum += qtdItem
-            break
-            case "pacoca":
-                addComum += qtdItem
-            break
-            case "ovomaltine":
-                addComum += qtdItem
-            break
-            case "morango":
-                addComum += qtdItem
-            break
-            case "banana":
-                addComum += qtdItem
-            break
-            case "uva":
-                addComum += qtdItem
-            break
-        }       
+
+        const listaAdcsLocalStorage  = getAdcsLocalStorage()
+        listaAdcsLocalStorage.forEach(i => {
+            if(adicional == i.nome){
+                if(i.premium == false){
+                    addPremium += qtdItem* i.valor
+                }
+                if(i.premium == true){
+                    addPremium += qtdItem* i.valor
+                }
+            }
+        })
+
+        // switch(nameId){
+        //     case "nutella":
+        //         addPremium += qtdItem*5
+        //     break
+        //     case "mem":
+        //         addPremium += qtdItem*4
+        //     break
+        //     case "kitkat":
+        //         addPremium += qtdItem*3
+        //     break
+        //     case "leitecondensado":
+        //         addComum += qtdItem
+        //     break
+        //     case "caldademorango":
+        //         addComum += qtdItem
+        //     break
+        //     case "caldadechocolate":
+        //         addComum += qtdItem
+        //     break
+        //     case "leiteninho":
+        //         addComum += qtdItem
+        //     break
+        //     case "granola":
+        //         addComum += qtdItem
+        //     break
+        //     case "pacoca":
+        //         addComum += qtdItem
+        //     break
+        //     case "ovomaltine":
+        //         addComum += qtdItem
+        //     break
+        //     case "morango":
+        //         addComum += qtdItem
+        //     break
+        //     case "banana":
+        //         addComum += qtdItem
+        //     break
+        //     case "uva":
+        //         addComum += qtdItem
+        //     break
+        // }       
         adicionais.push(adicional) 
     })
 
@@ -86,7 +85,7 @@ const moduloAdicionais = () => {
     }
     if( addComum >= 3){
         addComum = addComum - 3
-    }
+    }  
 
     totalAdc = addComum + addPremium
     listaRefAdcs = {

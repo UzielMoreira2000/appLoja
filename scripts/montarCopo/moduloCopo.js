@@ -1,19 +1,5 @@
 
 
-function labelInputValue_Adicionais(item, qtdItem=1) {
-    const labelItem = document.querySelector(`.${item}`)
-    const checkItem = document.querySelector(`#${item}`)
-    const textItem  = document.querySelector(`label.${item}`).textContent
-    if (checkItem.checked) {
-        labelItem.innerHTML += `
-        <input class="qtdItem" id="qtd${item}" type="number" value="${qtdItem}" min="1" >`
-    }
-    if (!checkItem.checked) {
-        labelItem.innerHTML = `${textItem}`
-    }
-}
-
-
 const f_tipo = () => {
     let tipo    = ''
     let acai    = document.querySelector('#acai')
