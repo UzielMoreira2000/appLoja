@@ -28,7 +28,7 @@ function cabecalhoDatasHistorico(){
                 ${data.dia}
                 ${mesExtenso(parseInt(data.mes))}
                 ${data.ano} - R$
-                ${totalDiaSelect(data).dia} , dinheiro: ${totalDiaSelect(data).dinheiro}
+                ${totalDiaSelect(data).dia} 
             </span>
         </div>`
         ultimoSpan = document.querySelector(`#novaDataHistorico${data.dia}`)
