@@ -15,13 +15,12 @@
   {nome:'kitkat'            ,valor: 4, premium: true },
   {nome:'nutella'           ,valor: 5, premium: true },
  ]
-
  localStorage.setItem("adicionaisAcai", JSON.stringify(listaAdcs))
 
 
- function getAdcsLocalStorage(){
-   const adicionais = JSON.parse(localStorage.getItem("adicionaisAcai")) || [] ;
-   return adicionais
+function getAdcsLocalStorage(){
+  const adicionais = JSON.parse(localStorage.getItem("adicionaisAcai")) || [] ;
+  return adicionais
 }
 
 
