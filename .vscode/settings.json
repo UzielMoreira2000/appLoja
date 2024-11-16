@@ -1,15 +1,12 @@
 {
-    "liveServer.settings.port": 5503,
+    "liveServer.settings.port": 5502,
     "window.zoomLevel": 0.1,
-    "workbench.colorTheme": "Dracula Theme",
+    "workbench.colorTheme": "Min Dark",
     "symbols.hidesExplorerArrows": false,
     "workbench.iconTheme": "symbols",
     "editor.fontFamily": "JetBrains Mono",
     "editor.fontSize": 14,
     "editor.lineHeight": 1.5,
-    "editor.rulers": [
-        80,
-        80
-    ],
+    "editor.rulers": [80, 80],
     "editor.fontLigatures": true,
 }

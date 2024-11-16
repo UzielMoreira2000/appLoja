@@ -7,9 +7,9 @@ function getObjAuth(){
 
 function auth(){
     const objAuth = getObjAuth()
-    // console.log(objAuth)
+    console.log(objAuth)
     if(objAuth==0){
-        // window.location='pages/login.html'
+        window.location='pages/login.html'
         return
     }else{
         return

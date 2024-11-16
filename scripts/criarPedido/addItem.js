@@ -59,11 +59,11 @@ function calculaItem(item){
             nomeItem = 'Guaraná'
         break
         case "aguacomgas":
-            valorPorItem += qtdItem*4
+            valorPorItem += qtdItem*3
             nomeItem = 'Água com Gás'
         break
         case "aguasemgas":
-            valorPorItem += qtdItem*3
+            valorPorItem += qtdItem*2
             nomeItem = 'Água sem Gás'
         break
     // SALGADOS
@@ -89,7 +89,7 @@ function calculaItem(item){
             nomeItem = 'Pirulito Big'
         break
         case "paçoca":
-            valorPorItem += qtdItem*1
+            valorPorItem += qtdItem*0.50
             nomeItem = 'Paçoca'
         break
         case "kitKat":
