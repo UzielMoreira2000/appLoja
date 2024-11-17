@@ -1,7 +1,5 @@
 
 
-const urlApiTest = ``
-
 const urlApiProd = `https://script.google.com/macros/s/AKfycbw0vTCIJOsui2RndEfNFITXJ_D7Zb8TueVxn0sNq4oGJnH5lh3AunbWnl92GIvK9wbUgw/exec`
 
 
@@ -27,6 +25,7 @@ function apiPost(lancamento, tipo) {
     }
     document.querySelector('#setPedidoApi').click()
 }
+
 
 
 function apiGet(){

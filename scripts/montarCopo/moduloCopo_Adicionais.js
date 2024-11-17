@@ -9,14 +9,16 @@ const moduloAdicionais = () => {
     var listaAdcs    = []
     var adicionais   = []
     var adcs         = document.querySelectorAll(".adc")
+
     for (let i = 0; i < adcs.length; i++) {
         if (adcs[i].checked) {
             adcsCheck.push(`${adcs[i].name}`)
         }
     }
+
     adcsCheck.forEach(adicional => {
         let nameId = adicional.split(' ').join('')
-        const listaAdcsLocalStorage  = getAdcsLocalStorage()
+        let listaAdcsLocalStorage  = getAdcsLocalStorage()
         let qtdItem = parseInt(document.querySelector(`#qtd${nameId}`).value)
         listaAdcs.push({
             qtdItem     : qtdItem,
@@ -25,10 +27,10 @@ const moduloAdicionais = () => {
         listaAdcsLocalStorage.forEach(i => {
             if(adicional == i.nome){
                 if(i.premium == false){
-                    addPremium += qtdItem* i.valor
+                    addComum += qtdItem * i.valor
                 }
                 if(i.premium == true){
-                    addPremium += qtdItem* i.valor
+                    addPremium += qtdItem * i.valor
                 }
             }
         })

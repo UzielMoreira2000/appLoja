@@ -25,7 +25,6 @@
 }
 
 
-
 function printListaAdcs(){
   const printListaAdcs = document.querySelector('.printListaAdcs')
   listaAdcs.forEach(adc => {
