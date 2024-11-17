@@ -20,10 +20,17 @@ function editarItemNoCarrinho(id){
             tamanhoCheck = item.tamanhoCopo
         }
     })
-    adcs.forEach((item) =>{
-        document.querySelector(`#${item.adicional}`).checked = true
-        labelInputValue_Adicionais(item.adicional, item.qtdItem)
+
+    adcs.forEach((i) =>{
+        console.log(i)
+        var item_Split = i.adicional.split(' ')
+        var item_Split_Join =  item_Split.join('')
+        var item = item_Split_Join
+        console.log(item)
+        document.querySelector(`input#${item}`).checked = true
+        labelInputValue_Item(item, i.qtdItem)
     })
+    
     quantidadeCopoInEdit(qtdCheck)
     tipoCopoInEdit(tipoCheck)
     tamanhoCopoInEdit(tamanhoCheck)

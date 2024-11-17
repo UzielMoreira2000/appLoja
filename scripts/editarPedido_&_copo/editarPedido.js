@@ -92,8 +92,8 @@ function atualizarPedido(){
         status              : statusPedidoInEdit,
         valor               : funcaoIinfoCarrinho(),
         valorFrete          : f_localConsumo().valor,
+        montador            : getObjAuth().user,
     }
-    console.log(pedido)
     exibirPedido(pedido, save=1);
     location.reload();
 }

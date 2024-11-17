@@ -39,6 +39,7 @@ function addNovoLancamentoAutomatico(){
         status              : "fila",
         valor               : funcaoIinfoCarrinho(),
         valorFrete          : f_localConsumo().valor,
+        montador            : getObjAuth().user,
     }
     exibirPedido(pedido)
     savePedidosLocalStorage(pedido)

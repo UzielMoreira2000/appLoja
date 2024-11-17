@@ -1,4 +1,5 @@
 
+
 function getObjAuth(){
     const objAuth = JSON.parse(localStorage.getItem("objAuth")) || '0' ;
     return objAuth
@@ -7,7 +8,6 @@ function getObjAuth(){
 
 function auth(){
     const objAuth = getObjAuth()
-    console.log(objAuth)
     if(objAuth==0){
         window.location='pages/login.html'
         return
@@ -22,16 +22,19 @@ function postDataLogin(){
     const password = document.querySelector('#senhaLogin').value
     localStorage.setItem("objAuth", JSON.stringify({
         user: user,
-        password: password
+        password: password,
+        data: data_Time()
     }))
-    console.log(user)
     checkAuth()
 }
 
 
 function checkAuth(){
     const objAuth = getObjAuth()
-    console.log(objAuth)
+    // cria csv com usuario e senha, ler a tabela, 
+    // jogar em um array, verificar se a string existe
+    // caso exista pegar o retorno, comparar com o input
+    // verificar se a senha da mesma linha é igual
     if(objAuth.user == 'juliana'){
         if(objAuth.password == 123){
             window.location='../AppLoja.html'
