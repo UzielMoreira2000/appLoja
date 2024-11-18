@@ -7,7 +7,7 @@ function userNow (){
         userNow.innerHTML = `Ola ${getAuth.user}!`
     }
 }
-userNow()
+// userNow()
 
 function data_Time(){
     const data = new Date()

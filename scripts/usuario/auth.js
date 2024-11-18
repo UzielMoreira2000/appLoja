@@ -25,7 +25,7 @@ function postDataLogin(){
         password: password,
         data: data_Time()
     }))
-    checkAuth()
+    // checkAuth()
 }
 
 
