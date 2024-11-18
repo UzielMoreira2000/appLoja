@@ -32,7 +32,7 @@ function addNovoLancamentoAutomatico(){
         localConsumo        : f_localConsumo().local,
         tipoPagamento       : 'entrada',
         tipoTransferencia   : 'automatica',
-        data                : data_Time(),
+        data                : hubDAtaTime(),
         itens               : itens,
         qtdItens            : qtdItens,
         id                  : data_Time().fullData,

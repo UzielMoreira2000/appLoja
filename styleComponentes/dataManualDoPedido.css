@@ -1,0 +1,21 @@
+
+.configPedido{
+    margin-top: 2em;
+}
+
+.btnDataManualDoPedido{
+    color: transparent;
+    background-color: white;
+    border: none;
+    transform: scale(0.8);
+}
+
+#opcoesConfig{
+
+    button{
+        text-transform: uppercase;
+        margin-left: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}

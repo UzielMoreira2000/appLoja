@@ -7,6 +7,6 @@
     "editor.fontFamily": "JetBrains Mono",
     "editor.fontSize": 14,
     "editor.lineHeight": 1.5,
-    "editor.rulers": [80, 80],
+    "editor.rulers": [120, 120],
     "editor.fontLigatures": true,
 }
