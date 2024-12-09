@@ -43,8 +43,8 @@ function cabecalhoDatasHistorico(){
 
 
 function HUB_Manual_ou_Automatico(dias){
-    const lancamentos = getLancamentosApiLocalStorage() 
-    lancamentos.forEach(lancamento => {
+    const lancamentosOrdenados = ordenarLancamentos()
+    lancamentosOrdenados.forEach(lancamento => {
         dias.forEach(dia => {
             if(lancamento.data.dia == dia){
                 if(lancamento.tipoTransferencia == 'automatica' ){
@@ -58,6 +58,19 @@ function HUB_Manual_ou_Automatico(dias){
     })
 }
 
+
+function ordenarLancamentos(){
+    const lancamentos = getLancamentosApiLocalStorage()  
+    lancamentos.forEach(i => {
+        i.data.fullData = parseInt(i.data.fullData)
+        // console.log(i)
+    });
+    const lancamentosOrdenados = lancamentos.sort((a, b) => {
+        a.data.fullData - b.data.fullData
+    })
+    // console.log(lancamentosOrdenados)
+    return lancamentosOrdenados ;
+}
 
 
 

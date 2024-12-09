@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const objetos = []
+
+        const pedidos = JSON.parse(localStorage.getItem("arrayPedidos")) || [] ;
+
+        pedidos.forEach(data => {
+            console.log(data.data);
+            let dataString = String(data.data.ano) + String(data.data.mes) + String(data.data.dia)
+            let dataNumber  = parseInt(dataString)
+            objetos.push(dataNumber)
+        })
+        console.log(objetos)
+
+        const ordenacaoAnual = objetos.sort((a, b) => 
+        a - b);
+
+        ordenacaoAnual.forEach(data => {
+            console.log(data);
+        });
+    </script>
+</body>
+</html>

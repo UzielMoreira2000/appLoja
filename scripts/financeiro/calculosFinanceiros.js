@@ -24,7 +24,7 @@ function totalDiaSelect(data){
                 totalDia += parseFloat((lancamento.valor).toFixed(2))
                 lancamento.pagamento.forEach(pagamento => {
                     if(pagamento.forma === 'dinheiro'){
-                        dinheiro += parseFloat((pagamento.valor).toFixed(2))
+                        dinheiro += parseFloat((pagamento.valor))
                     }
                 })
             }
@@ -34,7 +34,7 @@ function totalDiaSelect(data){
         dia      : totalDia,
         dinheiro : dinheiro,
     }
-    console.log(objExport)
+    // console.log(objExport)
     return objExport
 }
 

@@ -1,12 +1,16 @@
 {
     "liveServer.settings.port": 5502,
-    "window.zoomLevel": 0.12,
+    "window.zoomLevel": 0.13,
     "workbench.colorTheme": "Dracula Theme",
     "symbols.hidesExplorerArrows": false,
     "workbench.iconTheme": "symbols",
     "editor.fontFamily": "JetBrains Mono",
-    "editor.fontSize": 14,
-    "editor.lineHeight": 1.5,
+    "editor.fontSize": 15,
+    "editor.lineHeight": 1.7,
     "editor.rulers": [120, 120],
     "editor.fontLigatures": true,
 }
+
+
+
+

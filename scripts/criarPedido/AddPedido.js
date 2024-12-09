@@ -44,6 +44,7 @@ function addNovoLancamentoAutomatico(){
     exibirPedido(pedido)
     savePedidosLocalStorage(pedido)
     modal.classList.remove('active')
+    document.querySelector(".infoCarrinho").innerHTML = ''
     itens  = []
 }
 
