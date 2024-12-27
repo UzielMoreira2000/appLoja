@@ -1,10 +1,12 @@
  
 
-const modal = document.querySelector('.modal-container')
-function openModal(){
+function abreModal(modalClass){
+  const modal = document.querySelector(`.${modalClass}`)
   modal.showModal()
 }
-function closeModal(){
+
+function fechaModal(modalClass){
+  const modal = document.querySelector(`.${modalClass}`)
   modal.close()
 }
 
