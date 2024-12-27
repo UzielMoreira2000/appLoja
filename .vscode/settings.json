@@ -5,7 +5,7 @@
     "symbols.hidesExplorerArrows": false,
     "workbench.iconTheme": "symbols",
     "editor.fontFamily": "JetBrains Mono",
-    "editor.fontSize": 15,
+    "editor.fontSize": 14,
     "editor.lineHeight": 1.7,
     "editor.rulers": [140, 140],
     "editor.fontLigatures": true,

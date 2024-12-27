@@ -10,6 +10,9 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <script src="dataBase_Produtos_&_Adicionais/produtos.js" defer></script>
     <script src="dataBase_Produtos_&_Adicionais/adicionais.js" defer></script>
+
+    <script src="scripts/controle_Modal.js" defer></script>
+
 </head>
 
 <body>
@@ -52,16 +55,39 @@
 
         <div class="novoPedido">
             <button class="btnNovoPedido " id="btnNovoPedido" 
-                onclick="novoPedido()">
+                onclick="openModal()">
                 <i class='bx bx-plus-circle'></i> Novo Pedido
             </button>       
         </div><!-- novoPedido -->   
 
-        <div class="modal-container">
+        <dialog class="modal-container">
             <div class="modal">
-                                
+                <button class="closeModal" style="margin: 0 auto;" 
+                onclick="closeModal()">
+                x
+            </button>       
+            <div class="col-a">
+                <label for="comsumirEm"><p> Local de consumo </p></label>
+                <input id="estabelecimento" name="comsumirEm" type="radio" 
+                onclick="labelInputValue_Frete()" checked>
+                <label for="select"> 
+                    Estabelecimento 
+                </label>
+                <br>
+                <input id="entregar" name="comsumirEm" 
+                type="radio"
+                onclick="labelInputValue_Frete()" >
+                <label for="select" id="entregar" class="entregar"> 
+                    Entrega
+                </label>
+                <br><br>
+            </div>   
+            <div class="col-b"></div>   
+            <div class="col-c"></div>   
             </div><!-- modal -->
-        </div><!-- modal container -->
+        </dialog><!-- modal container -->
+
+        
 
         <section class="exibicao">  
             <div class="exibepedido fila">
