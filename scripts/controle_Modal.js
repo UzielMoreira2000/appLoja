@@ -10,10 +10,49 @@ function fechaModal(modalClass){
   modal.close()
 }
 
-function openInModal(categoria){
+const getCATEGORIAS_LocalStorage = (categoria) =>{
+  objetoExport = []
+  const CATEGORIAS = JSON.parse(localStorage.getItem("CATEGORIAS")) || [] ;
+  CATEGORIAS.forEach(itemCategoria => {
+    itemCategoria.forEach(produto => {
+      if(produto.categoria == categoria){
+        objetoExport.push(produto)
+      }
+    })
+  })
+  return objetoExport
+}
+
+function html_listaDeProdutos(produtos){
+  var consenso = 0
+  var objetoExport = ``
+  produtos.forEach(produto => {
+    if(produto.categoria == 'AÇAIS'){
+      consenso = 1
+    }else{
+      consenso = 0
+    }
+    objetoExport += ` <br>
+      <input id="${produto.id}" type="${produto.input}" 
+      name="${produto.categoria}" onclick="exibeAdicionais(${consenso})">
+      <label for="${produto.categoria}"> ${produto.nome} </label>
+    `
+  })
+  return objetoExport;
+}
+
+function exibeAdicionais(consenso){
+  console.log('exibe adicionais: '+ consenso)
+}
+
+function exibirCategoria(categoria){
   const produtosInModal = document.querySelector('.produtosInModal')
-  const produtos = ''
-  const html = `categoria : ${categoria}`
+  const produtos = getCATEGORIAS_LocalStorage(categoria)
+  const listaDeProdutos = html_listaDeProdutos(produtos)
+  const html = `
+    categoria : ${categoria} <br><br>
+    produtos: ${listaDeProdutos}
+  `
   produtosInModal.innerHTML = html
 }
 

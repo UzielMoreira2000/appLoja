@@ -74,10 +74,18 @@
                     </button>     
                 </div>
                 <div class="selectTipoItem">
-                    <button onclick="openInModal('AÇAIS')">Açais</button>
-                    <button onclick="openInModal('DOCES')">Bebidas</button>
-                    <button onclick="openInModal('SALGADOS')">Salgados</button>
-                    <button onclick="openInModal('BEBIDAS')">Doces</button>
+                    <button onclick="exibirCategoria('AÇAIS')">
+                        Açais
+                    </button>
+                    <button onclick="exibirCategoria('BEBIDAS')">
+                        Bebidas
+                    </button>
+                    <button onclick="exibirCategoria('SALGADOS')">
+                        Salgados
+                    </button>
+                    <button onclick="exibirCategoria('DOCES')">
+                        Doces
+                    </button>
                 </div>
 
                 <div class="col-a">
@@ -95,7 +103,8 @@
                         Entrega
                     </label>
                     <br><br>
-                    <div class="produtosInModal"></div>
+                    <div class="produtosInModal">
+                    </div>
                 </div>   
                 <div class="col-b"></div>   
                 <div class="col-c"></div>   
