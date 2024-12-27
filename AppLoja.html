@@ -62,28 +62,43 @@
 
         <dialog class="modal-container">
             <div class="modal">
-                <button class="closeModal" style="margin: 0 auto;" 
-                onclick="fechaModal('modal-container')">
-                x
-            </button>       
-            <div class="col-a">
-                <label for="comsumirEm"><p> Local de consumo </p></label>
-                <input id="estabelecimento" name="comsumirEm" type="radio" 
-                onclick="labelInputValue_Frete()" checked>
-                <label for="select"> 
-                    Estabelecimento 
-                </label>
-                <br>
-                <input id="entregar" name="comsumirEm" 
-                type="radio"
-                onclick="labelInputValue_Frete()" >
-                <label for="select" id="entregar" class="entregar"> 
-                    Entrega
-                </label>
-                <br><br>
-            </div>   
-            <div class="col-b"></div>   
-            <div class="col-c"></div>   
+                <div class="topo">
+                        <button class="closeModal" 
+                        style="
+                            margin-left: 0em;
+                            padding-left: 0.3em;
+                            padding-right: 0.3em;
+                        " 
+                        onclick="fechaModal('modal-container')">
+                        Fechar 
+                    </button>     
+                </div>
+                <div class="selectTipoItem">
+                    <button onclick="openInModal('AÇAIS')">Açais</button>
+                    <button onclick="openInModal('DOCES')">Bebidas</button>
+                    <button onclick="openInModal('SALGADOS')">Salgados</button>
+                    <button onclick="openInModal('BEBIDAS')">Doces</button>
+                </div>
+
+                <div class="col-a">
+                    <label for="comsumirEm"><p> Local de consumo </p></label>
+                    <input id="estabelecimento" name="comsumirEm" type="radio" 
+                    onclick="labelInputValue_Frete()" checked>
+                    <label for="select"> 
+                        Estabelecimento 
+                    </label>
+                    <br>
+                    <input id="entregar" name="comsumirEm" 
+                    type="radio"
+                    onclick="labelInputValue_Frete()" >
+                    <label for="select" id="entregar" class="entregar"> 
+                        Entrega
+                    </label>
+                    <br><br>
+                    <div class="produtosInModal"></div>
+                </div>   
+                <div class="col-b"></div>   
+                <div class="col-c"></div>   
             </div><!-- modal -->
         </dialog><!-- modal container -->
 

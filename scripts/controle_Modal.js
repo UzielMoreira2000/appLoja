@@ -10,6 +10,15 @@ function fechaModal(modalClass){
   modal.close()
 }
 
+function openInModal(categoria){
+  const produtosInModal = document.querySelector('.produtosInModal')
+  const produtos = ''
+  const html = `categoria : ${categoria}`
+  produtosInModal.innerHTML = html
+}
+
+
+
 
 //  function getAdcsLocalStorage(){
 //    const adicionais = JSON.parse(localStorage.getItem("adicionaisAcai")) || [] ;
