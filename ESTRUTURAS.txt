@@ -1,0 +1,99 @@
+
+
+Extruturas de objetos padrão;
+
+PRODUTO = {
+    id: nome sem espaços
+    categoria:         CATEGORIAS[i]
+    nome: 
+    valor: 
+    adicionais:        {objetoADICIONAIS}, ou 0
+    listaDeAdicionais: 0 ou LISTA_DE_ADICIONAIS
+    tamanho:           valorX ou[lista TAMANHO_DO_COPO funcao(inputRadio)]
+    tipo:              0 ou [lista TIPO_DE_ACAI funcao(inputRadio)]
+    um: 
+}
+
+ADICIONAIS = {
+    id: nome sem espaços
+    nome:
+    valor: 
+    premium:
+}
+
+FRETE = {
+    valor:    funcao(inputNumber)
+    cliente:  [listaCLIENTES]
+    endereco: opção de [listaCLIENTES[objetoCLIENTE.endereço]]
+    contato:  opção de [listaCLIENTES[objetoCLIENTE.contato]]
+}
+
+PEDIDO = {
+    id:             {objetoDATA.fullData}
+    valor:          funcao(soma PRODUTOS.valor)
+    data:           {objetoDATA}
+    tipoPagamento:  entrada
+    frete:          funcao(inputChecked)
+    localDeConsumo: if(frete)
+    valorFrete:     {objetoFRETE.valor}, ou 0
+    status:         funcao(listenID)
+    produtos:       [listaPRODUTOS]
+    montador:       COLABORADORES.nome
+    pagamento:      [], ou PAGAMENTO
+}
+
+PAGAMENTO = {
+    valorRecebido:
+    forma: [
+        {
+            forma:funcao(inputChecked)
+            valorEmForma: funcao(inputNumber)
+        },
+    ]
+}
+
+CATEGORIAS = {
+    AÇAIS,
+    DOCES,
+    SALGADOS,
+    BEBIDAS
+}
+
+
+=== LISTAS === 
+
+
+
+TIPO_DE_ACAI = [
+    açai, misto, cupuaçu
+]
+
+PRODUTOS = [
+    {
+        PRODUTO
+    },
+]
+
+COLABORADORES = [
+    {
+        nome: 
+        senha: 
+        horaEntrada: funcao()
+        horaSaida:   funcao()
+    },
+]
+
+CLIENTES = [
+    {
+        nome: 
+        endereco:
+        contato:
+    },
+]
+
+LISTAADICIONAIS = [
+    {
+        quantidade: funcao(inputNumber)
+        nome:       funcao(inputChecked)
+    },
+]

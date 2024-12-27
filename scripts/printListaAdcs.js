@@ -1,22 +1,5 @@
  
 
- const listaAdcs = [
-  {nome:'leite condensado'  ,valor: 1, premium: false},
-  {nome:'calda de chocolate',valor: 1, premium: false},
-  {nome:'calda de morango'  ,valor: 1, premium: false},
-  {nome:'morango'           ,valor: 1, premium: false},
-  {nome:'uva'               ,valor: 1, premium: false},
-  {nome:'banana'            ,valor: 1, premium: false},
-  {nome:'ovomaltine'        ,valor: 1, premium: false},
-  {nome:'leite ninho'       ,valor: 1, premium: false},
-  {nome:'pacoca'            ,valor: 1, premium: false},
-  {nome:'granola'           ,valor: 1, premium: false},
-  {nome:'mem'               ,valor: 3, premium: true },
-  {nome:'kitkat'            ,valor: 4, premium: true },
-  {nome:'nutella'           ,valor: 5, premium: true },
- ]
-
- localStorage.setItem("adicionaisAcai", JSON.stringify(listaAdcs))
 
 
  function getAdcsLocalStorage(){
