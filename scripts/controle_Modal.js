@@ -10,18 +10,7 @@ function fechaModal(modalClass){
   modal.close()
 }
 
-const getCATEGORIAS_LocalStorage = (categoria) =>{
-  objetoExport = []
-  const CATEGORIAS = JSON.parse(localStorage.getItem("CATEGORIAS")) || [] ;
-  CATEGORIAS.forEach(itemCategoria => {
-    itemCategoria.forEach(produto => {
-      if(produto.categoria == categoria){
-        objetoExport.push(produto)
-      }
-    })
-  })
-  return objetoExport
-}
+
 
 function html_listaDeProdutos(produtos){
   var consenso = 0
@@ -34,26 +23,50 @@ function html_listaDeProdutos(produtos){
     }
     objetoExport += ` <br>
       <input id="${produto.id}" type="${produto.input}" 
-      name="${produto.categoria}" onclick="exibeAdicionais(${consenso})">
+      name="${produto.categoria}">
       <label for="${produto.categoria}"> ${produto.nome} </label>
     `
   })
   return objetoExport;
 }
 
-function exibeAdicionais(consenso){
-  console.log('exibe adicionais: '+ consenso)
+function html_listaDeAdicionais(adicionais){
+  var objetoExport = ``
+  adicionais.forEach(adicional => {
+    objetoExport += ` <br>
+      <input id="${adicional.id}" type="checkbox" name="${adicional.id}"
+      onclick="labelInputValue_Adicionais('${adicional.nome}')" 
+      ">
+      <label for="${adicional.id}"> ${adicional.nome} </label>
+    `
+  })
+  return objetoExport;
+}
+
+function exibirAdicionais(categoria){
+  const adicionaisInModal = document.querySelector('.col-b')
+  if(categoria === 'AÇAIS'){
+    const adicionais = getADICIONAIS_LocalStorage()
+    const listaDeAdicionais = html_listaDeAdicionais(adicionais)
+    adicionaisInModal.innerHTML = `${listaDeAdicionais}`
+  }
+  if(categoria != 'AÇAIS'){
+    adicionaisInModal.innerHTML = ''
+  }
+  
 }
 
 function exibirCategoria(categoria){
+  
   const produtosInModal = document.querySelector('.produtosInModal')
   const produtos = getCATEGORIAS_LocalStorage(categoria)
   const listaDeProdutos = html_listaDeProdutos(produtos)
-  const html = `
+ 
+  produtosInModal.innerHTML =  `
     categoria : ${categoria} <br><br>
     produtos: ${listaDeProdutos}
   `
-  produtosInModal.innerHTML = html
+  exibirAdicionais(categoria)
 }
 
 
