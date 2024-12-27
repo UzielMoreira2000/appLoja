@@ -63,13 +63,11 @@ function ordenarLancamentos(){
     const lancamentos = getLancamentosApiLocalStorage()  
     lancamentos.forEach(i => {
         i.data.fullData = parseInt(i.data.fullData)
-        // console.log(i)
-    });
-    const lancamentosOrdenados = lancamentos.sort((a, b) => {
-        a.data.fullData - b.data.fullData
     })
-    // console.log(lancamentosOrdenados)
-    return lancamentosOrdenados ;
+    // const lancamentosOrdenados = lancamentos.sort((a, b) => {
+    //     a.data.fullData - b.data.fullData
+    // })
+    return lancamentos /*lancamentosOrdenados*/ ;
 }
 
 
