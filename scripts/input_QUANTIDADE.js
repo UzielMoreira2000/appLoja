@@ -5,7 +5,7 @@ function input_QUANTIDADE(id, categoria){
     const checkItem = document.querySelector(`#${id}`)
     const labelItem = document.querySelector(`.label${id}`)
     if(categoria == 'AÇAIS'){
-        radios_CASE(id, categoria)
+        radiosCASE_input_QUANTIDADE(id, categoria)
         if(item){
             return
         }
@@ -15,14 +15,14 @@ function input_QUANTIDADE(id, categoria){
             labelItem.innerHTML += `
             <input class="qtdItem ${categoria}" id="qtd${id}" type="number" value="1" min="1" >`
         }
-        if (!checkItem.checked) {
-            labelItem.innerHTML = `${labelItem.textContent}`
-        }
+    }
+    if(!checkItem.checked) {
+        labelItem.innerHTML = `${labelItem.textContent}`
     }
 }
 
 
-function radios_CASE(id, categoria){
+function radiosCASE_input_QUANTIDADE(id, categoria){
     const radios = getCATEGORIAS_LocalStorage(categoria)
     radios.forEach(produto => {
         if(produto.id != id){

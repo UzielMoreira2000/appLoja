@@ -1,4 +1,21 @@
 
+const FRETE = [
+    {   id:'consumirnolocal', 
+        nome:'Consumir no Local',
+        valor: 0, 
+        categoria: 'AÇAIS',
+        input: 'radio',
+        tipo: 'localdeconsumo',
+    },
+    {   id:'frete', 
+        nome:'Frete',
+        valor: 5, 
+        categoria: 'AÇAIS',
+        input: 'radio',
+        tipo: 'localdeconsumo',
+    }
+]
+
 const AÇAIS = [
     {   id:'copo200ml', 
         nome:'Copo 200ml',
@@ -117,7 +134,7 @@ const DOCES = [
 ]
 
 const CATEGORIAS = [
-    AÇAIS, DOCES, BEBIDAS, SALGADOS
+    FRETE , AÇAIS, DOCES, BEBIDAS, SALGADOS
 ]
 
 

@@ -25,23 +25,60 @@ function exibirAdicionais(categoria){
 
 
 function exibePRODUTOS_e_ADICIONAIS(array){
-  var copo = ''
-  var counter = 0
+  var radios = {}
+  var conteudo_FOR = ''
   var objetoExport = ``
   array.forEach(item => {
-    if(item.categoria == 'AÇAIS' && counter == 0){
-      copo = 'copo'
-      objetoExport += `
-        <label for="copo"><p> Selecione o Tamanho </p></label> `
-      counter ++
+    if(item.categoria == 'AÇAIS'){
+      radios = radiosCASE_exibePRODUTOS_e_ADICIONAIS(item.id, conteudo_FOR)
+      if(radios != {}){
+        objetoExport += `
+        <div  style="margin-bottom: -2em;">${radios.stringHTML || ''}</div>`
+      }
     }
     objetoExport += ` <br>
-      <input id="${item.id}" name="${copo}" type="${item.input}" 
+      <input id="${item.id}" name="${radios.conteudoFOR}" type="${item.input}" 
         onclick="input_QUANTIDADE('${item.id}', '${item.categoria}')" >
-      <label for="${copo}" class="label${item.id} item" >
+      <label for="${radios.conteudoFOR}" class="label${item.id} item" >
         ${item.nome} 
       </label>
     `
   })
   return objetoExport;
 }
+
+
+function radiosCASE_exibePRODUTOS_e_ADICIONAIS(id, conteudoFOR){
+  var objetoExport = {}
+  if(id == 'copo200ml'){
+    objetoExport = thisFunction_AÇAIS(conteudoFOR)
+  }
+  if(id == 'consumirnolocal'){
+    objetoExport = thisFunction_FRETE(conteudoFOR)
+  }
+  return  objetoExport
+}
+
+
+function thisFunction_AÇAIS(conteudoFOR){
+  conteudoFOR = 'AÇAIS'
+  const stringHTML = `<br>
+  <label for="${conteudoFOR}"><p> Selecione o Tamanho </p></label> `
+  return  objetoExport = {
+    stringHTML: stringHTML,
+    conteudoFOR: conteudoFOR,
+  }
+}
+
+
+function thisFunction_FRETE(conteudoFOR){
+  conteudoFOR = 'FRETE'
+  const stringHTML = `<br>
+  <label for="${conteudoFOR}"><p> Selecione o consumir no local </p></label> `
+  return  objetoExport = {
+    stringHTML: stringHTML,
+    conteudoFOR: conteudoFOR,
+  }
+}
+
+

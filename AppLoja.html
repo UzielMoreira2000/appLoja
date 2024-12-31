@@ -67,50 +67,39 @@
         <dialog class="modal-container">
             <div class="modal">
                 <div class="topo">
-                        <button class="closeModal" 
-                        style="
-                            margin-left: 0em;
-                            padding-left: 0.3em;
-                            padding-right: 0.3em;
-                        " 
-                        onclick="fechaModal('modal-container')">
-                        Fechar 
-                    </button>     
+                    <div class="selectTipoItem">
+                        <button onclick="exibirCategoria('AÇAIS')">
+                            Açais
+                        </button>
+                        <button onclick="exibirCategoria('BEBIDAS')">
+                            Bebidas
+                        </button>
+                        <button onclick="exibirCategoria('SALGADOS')">
+                            Salgados
+                        </button>
+                        <button onclick="exibirCategoria('DOCES')">
+                            Doces
+                        </button>
+                    </div>
+
+                    <div class="btnFecharModal">
+                        <button id="btnFecharModal" 
+                            style=" margin-left: 0em;
+                                    padding-left: 0.3em;
+                                    padding-right: 0.3em;" 
+                            onclick="fechaModal('modal-container')">
+                            Fechar 
+                        </button>  
+                    </div>
                 </div>
-                <div class="selectTipoItem">
-                    <button onclick="exibirCategoria('AÇAIS')">
-                        Açais
-                    </button>
-                    <button onclick="exibirCategoria('BEBIDAS')">
-                        Bebidas
-                    </button>
-                    <button onclick="exibirCategoria('SALGADOS')">
-                        Salgados
-                    </button>
-                    <button onclick="exibirCategoria('DOCES')">
-                        Doces
-                    </button>
+                <div class="cols">
+                    <div class="col-a">
+                        <div class="produtosInModal"></div>
+                    </div>   
+                    <div class="col-b"></div>   
+                    <div class="col-c"></div>   
                 </div>
 
-                <div class="col-a">
-                    <label for="comsumirEm"><p> Local de consumo </p></label>
-                    <input id="estabelecimento" name="comsumirEm" type="radio" 
-                    onclick="labelInputValue_Frete()" checked>
-                    <label for="select"> 
-                        Estabelecimento 
-                    </label>
-                    <br>
-                    <input id="entregar" name="comsumirEm" 
-                    type="radio" >
-                    <label for="select" id="entregar" class="entregar"> 
-                        Entrega
-                    </label>
-                    <br><br>
-                    <div class="produtosInModal">
-                    </div>
-                </div>   
-                <div class="col-b"></div>   
-                <div class="col-c"></div>   
             </div><!-- modal -->
         </dialog><!-- modal container -->
 
