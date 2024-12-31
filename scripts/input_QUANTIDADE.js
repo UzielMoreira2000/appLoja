@@ -12,7 +12,7 @@ function input_QUANTIDADE(id, categoria){
     }
     if(!item){        
         if (checkItem.checked) {
-            labelItem.innerHTML += `
+            labelItem.innerHTML += `<br>
             <input class="qtdItem ${categoria}" id="qtd${id}" type="number" value="1" min="1" >`
         }
     }

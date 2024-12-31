@@ -30,16 +30,16 @@ function exibePRODUTOS_e_ADICIONAIS(array){
   var objetoExport = ``
   array.forEach(item => {
     if(item.categoria == 'AÇAIS'){
-      radios = radiosCASE_exibePRODUTOS_e_ADICIONAIS(item.id, conteudo_FOR)
+      radios = radiosCASE_exibePRODUTOS_e_ADICIONAIS(item, conteudo_FOR)
       if(radios != {}){
         objetoExport += `
-        <div  style="margin-bottom: -2em;">${radios.stringHTML || ''}</div>`
+        <div  style="margin-bottom: -1.3em;">${radios.stringHTML || ''}</div>`
       }
     }
     objetoExport += ` <br>
-      <input id="${item.id}" name="${radios.conteudoFOR}" type="${item.input}" 
+      <input id="${item.id}" name="${radios.tipo}" type="${item.input}" 
         onclick="input_QUANTIDADE('${item.id}', '${item.categoria}')" >
-      <label for="${radios.conteudoFOR}" class="label${item.id} item" >
+      <label for="select" class="label${item.id} item" >
         ${item.nome} 
       </label>
     `
@@ -48,36 +48,39 @@ function exibePRODUTOS_e_ADICIONAIS(array){
 }
 
 
-function radiosCASE_exibePRODUTOS_e_ADICIONAIS(id, conteudoFOR){
+function radiosCASE_exibePRODUTOS_e_ADICIONAIS(item, tipo){
   var objetoExport = {}
-  if(id == 'copo200ml'){
-    objetoExport = thisFunction_AÇAIS(conteudoFOR)
+  if(item.id == 'copo200ml'){
+    objetoExport = thisFunction_AÇAIS(item.tipo)
   }
-  if(id == 'consumirnolocal'){
-    objetoExport = thisFunction_FRETE(conteudoFOR)
+  if(item.id == 'consumirnolocal'){
+    objetoExport = thisFunction_FRETE(item.tipo)
   }
+  if(objetoExport.tipo == undefined){
+    objetoExport.tipo = item.tipo
+  }
+  console.log(objetoExport)
+
   return  objetoExport
 }
 
 
-function thisFunction_AÇAIS(conteudoFOR){
-  conteudoFOR = 'AÇAIS'
-  const stringHTML = `<br>
-  <label for="${conteudoFOR}"><p> Selecione o Tamanho </p></label> `
+function thisFunction_AÇAIS(tipo){
+  const stringHTML = `<br> 
+  <label for="${tipo}"><p> Selecione o Tamanho </p></label> `
   return  objetoExport = {
     stringHTML: stringHTML,
-    conteudoFOR: conteudoFOR,
+    tipo: tipo,
   }
 }
 
 
-function thisFunction_FRETE(conteudoFOR){
-  conteudoFOR = 'FRETE'
+function thisFunction_FRETE(tipo){
   const stringHTML = `<br>
-  <label for="${conteudoFOR}"><p> Selecione o consumir no local </p></label> `
+  <label for="${tipo}"><p> Selecione o consumir no local </p></label> `
   return  objetoExport = {
     stringHTML: stringHTML,
-    conteudoFOR: conteudoFOR,
+    tipo: tipo,
   }
 }
 
