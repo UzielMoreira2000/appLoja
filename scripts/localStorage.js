@@ -1,21 +1,19 @@
 
 
 function getCATEGORIAS_LocalStorage(categoria, idItemExpecifico=0){
-    objetoExport = []
-    // console.log(categoria)
-    // console.log(idItemExpecifico)
-    const CATEGORIAS = JSON.parse(localStorage.getItem("CATEGORIAS")) || [] ;
-    CATEGORIAS.forEach(itemCategoria => {
-      itemCategoria.forEach(produto => {
-        if(produto.categoria == categoria){
-          objetoExport.push(produto)
-        }
-      })
+  objetoExport = []
+  const CATEGORIAS = JSON.parse(localStorage.getItem("CATEGORIAS")) || [] ;
+  CATEGORIAS.forEach(itemCategoria => {
+    itemCategoria.forEach(produto => {
+      if(produto.categoria == categoria){
+        objetoExport.push(produto)
+      }
     })
-    if(idItemExpecifico != 0){
-      objetoExport = getIdItemDataBase_LocalSorage(idItemExpecifico)
-    }
-    return objetoExport
+  })
+  if(idItemExpecifico != 0){
+    objetoExport = getIdItemDataBase_LocalSorage(idItemExpecifico)
+  }
+  return objetoExport
 }
 
 
@@ -29,11 +27,12 @@ function getIdItemDataBase_LocalSorage(id){
       }
     })
   })
+  // console.log(objetoExport)
   return objetoExport
 }
 
 
-function getTipoItemDataBase_LocalSorage(tipo, categoria){
+function getTipoItemDataBase_LocalSorage(tipo){
   var objetoExport = []
   const CATEGORIAS = JSON.parse(localStorage.getItem("CATEGORIAS")) || [] ;
   CATEGORIAS.forEach(categoria => {
@@ -46,7 +45,6 @@ function getTipoItemDataBase_LocalSorage(tipo, categoria){
     })
   })
   return objetoExport
-
 }
 
 

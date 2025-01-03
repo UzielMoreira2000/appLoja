@@ -133,15 +133,124 @@ const DOCES = [
     },    
 ]
 
+
+const ADICIONAIS = [
+    {   id: 'leitecondensado',
+        nome:'leite condensado',
+        valor: 1, 
+        premium: false,
+        tipo: 'adicional',
+        input: 'checkbox',
+    },
+    {   id: 'caldadechocolate',
+        nome:'calda de chocolate',
+        valor: 1, 
+        premium: false,
+        tipo: 'adicional',
+        input: 'checkbox',
+    },
+    {   id: 'caldademorango',
+        nome:'calda de morango',
+        valor: 1,
+        premium: false,
+        tipo: 'adicional',
+        input: 'checkbox',
+    },
+    {   id: 'morango',
+        nome:'morango',
+        valor: 1, 
+        premium: false,
+        tipo: 'adicional',
+        input: 'checkbox',
+    },
+    {   id: 'uva',
+        nome:'uva',
+        valor: 1, 
+        premium: false,
+        tipo: 'adicional',
+        input: 'checkbox',
+    },
+    {   id: 'banana',
+        nome:'banana',
+        valor: 1, 
+        premium: false,
+        tipo: 'adicional',
+        input: 'checkbox',
+    },
+    {   id: 'ovomaltine',
+        nome:'ovomaltine',
+        valor: 1, 
+        premium: false,
+        tipo: 'adicional',
+        input: 'checkbox',
+    },
+    {   id: 'leiteninho',
+        nome:'leite ninho',
+        valor: 1, 
+        premium: false,
+        tipo: 'adicional',
+        input: 'checkbox',
+    },
+    {   id: 'pacoca',
+        nome:'pacoca',
+        valor: 1, 
+        premium: false,
+        tipo: 'adicional',
+        input: 'checkbox',
+    },
+    {   id: 'granola',
+        nome:'granola',
+        valor: 1, 
+        premium: false,
+        tipo: 'adicional',
+        input: 'checkbox',
+    },
+    {   id: 'mem',
+        nome:'mem',
+        valor: 3, 
+        premium: true ,
+        tipo: 'adicional',
+        input: 'checkbox',
+    },
+    {   id: 'kitkat',
+        nome:'kitkat',
+        valor: 4, 
+        premium: true ,
+        tipo: 'adicional',
+        input: 'checkbox',
+    },
+    {   id: 'nutella',
+        nome:'nutella',
+        valor: 5, 
+        premium: true ,
+        tipo: 'adicional',
+        input: 'checkbox',
+    },
+]
+
+
 const CATEGORIAS = [
     FRETE , AÇAIS, DOCES, BEBIDAS, SALGADOS
 ]
 
+const DB_PRODUTOS_E_ADICIONAIS = [
+    FRETE , AÇAIS, DOCES, BEBIDAS, SALGADOS, ADICIONAIS
+]
+
+
+function f_ADICIONAIS(){
+    localStorage.setItem("ADICIONAIS", JSON.stringify(ADICIONAIS))
+}f_ADICIONAIS()
 
 
 function f_CATEGORIAS(){
     localStorage.setItem("CATEGORIAS", JSON.stringify(CATEGORIAS))
 }f_CATEGORIAS()
+
+
+
+
+
 
 
 

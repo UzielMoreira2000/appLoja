@@ -4,12 +4,11 @@ function abreModal(modalClass){
   const modal = document.querySelector(`.${modalClass}`)
   modal.showModal()
 }
+
 function fechaModal(modalClass){
   const modal = document.querySelector(`.${modalClass}`)
   modal.close()
 }
-
-
 
 
 

@@ -16,10 +16,12 @@ function exibirAdicionais(categoria){
   if(categoria === 'AÇAIS'){
     const adicionais = getADICIONAIS_LocalStorage()
     const listaDeAdicionais = exibePRODUTOS_e_ADICIONAIS(adicionais)
-    adicionaisInModal.innerHTML = `${listaDeAdicionais}`
+    adicionaisInModal.innerHTML = ` <button onclick="adicionarItem()">
+      Adicionar </button> ${listaDeAdicionais}`
   }
   if(categoria != 'AÇAIS'){
-    adicionaisInModal.innerHTML = ''
+    adicionaisInModal.innerHTML = `<button onclick="adicionarItem()">
+      Adicionar </button>`
   }  
 }
 
@@ -81,5 +83,6 @@ function thisFunction_FRETE(tipo){
     tipo: tipo,
   }
 }
+
 
 
