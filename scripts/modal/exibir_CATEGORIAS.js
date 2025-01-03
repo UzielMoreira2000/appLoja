@@ -25,12 +25,12 @@ function exibirAdicionais(categoria){
 
 
 function exibePRODUTOS_e_ADICIONAIS(array){
+  var tipo = ''
   var radios = {}
-  var conteudo_FOR = ''
   var objetoExport = ``
   array.forEach(item => {
     if(item.categoria == 'AÇAIS'){
-      radios = radiosCASE_exibePRODUTOS_e_ADICIONAIS(item, conteudo_FOR)
+      radios = radiosCASE_exibePRODUTOS_e_ADICIONAIS(item, tipo)
       if(radios != {}){
         objetoExport += `
         <div  style="margin-bottom: -1.3em;">${radios.stringHTML || ''}</div>`
@@ -39,7 +39,7 @@ function exibePRODUTOS_e_ADICIONAIS(array){
     objetoExport += ` <br>
       <input id="${item.id}" name="${radios.tipo}" type="${item.input}" 
         onclick="input_QUANTIDADE('${item.id}', '${item.categoria}')" >
-      <label for="select" class="label${item.id} item" >
+      <label for="${radios.tipo}" class="label${item.id} item" >
         ${item.nome} 
       </label>
     `
@@ -59,8 +59,6 @@ function radiosCASE_exibePRODUTOS_e_ADICIONAIS(item, tipo){
   if(objetoExport.tipo == undefined){
     objetoExport.tipo = item.tipo
   }
-  console.log(objetoExport)
-
   return  objetoExport
 }
 
