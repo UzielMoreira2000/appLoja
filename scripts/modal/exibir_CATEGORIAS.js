@@ -33,7 +33,7 @@ function exibePRODUTOS_e_ADICIONAIS(array){
       radios = radiosCASE_exibePRODUTOS_e_ADICIONAIS(item, tipo)
       if(radios != {}){
         objetoExport += `
-        <div  style="margin-bottom: -1.3em;">${radios.stringHTML || ''}</div>`
+        <div  style="margin-bottom: -1.1em;">${radios.stringHTML || ''}</div>`
       }
     }
     objetoExport += ` <br>
