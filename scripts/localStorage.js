@@ -1,58 +1,80 @@
 
 
-function getCATEGORIAS_LocalStorage(categoria, idItemExpecifico=0){
-  objetoExport = []
-  const CATEGORIAS = JSON.parse(localStorage.getItem("CATEGORIAS")) || [] ;
-  CATEGORIAS.forEach(itemCategoria => {
-    itemCategoria.forEach(produto => {
-      if(produto.categoria == categoria){
-        objetoExport.push(produto)
-      }
-    })
-  })
-  if(idItemExpecifico != 0){
-    objetoExport = getIdItemDataBase_LocalSorage(idItemExpecifico)
-  }
-  return objetoExport
+const getPedidosLocalStorage = () =>{
+    const pedidos = JSON.parse(localStorage.getItem("arrayPedidos")) || [] ;
+    return pedidos;
 }
 
 
-function getIdItemDataBase_LocalSorage(id){
-  var objetoExport = []
-  const CATEGORIAS = JSON.parse(localStorage.getItem("CATEGORIAS")) || [] ;
-  CATEGORIAS.forEach(categoria => {
-    categoria.forEach(item => {
-      if(item.id == id){
-        objetoExport = item
-      }
-    })
-  })
-  // console.log(objetoExport)
-  return objetoExport
-}
-
-
-function getTipoItemDataBase_LocalSorage(tipo){
-  var objetoExport = []
-  const CATEGORIAS = JSON.parse(localStorage.getItem("CATEGORIAS")) || [] ;
-  CATEGORIAS.forEach(categoria => {
-    categoria.forEach(item => {
-      if(item.tipo == tipo){
-        if(item.categoria == categoria){
-          objetoExport.push(item)
+const buscaPedido = (id) =>{
+    const pedidos = getPedidosLocalStorage()
+    var pedido = {}
+    pedidos.forEach(index => {
+        if(index.id == id){
+            pedido = index
         }
-      }
     })
-  })
-  return objetoExport
+    return pedido
+}
+
+
+const savePedidosLocalStorage = (pedido) =>{
+    const pedidos = getPedidosLocalStorage()
+    pedidos.push(pedido)
+    localStorage.setItem("arrayPedidos", JSON.stringify(pedidos))
+}
+
+
+const loadPedidos  = () => {
+    const pedidos  = getPedidosLocalStorage()
+    pedidos.forEach((pedido) => {
+        exibirPedido(pedido, save=0)
+        // if(pedido.data.dia == data_Time().dia){
+        // }
+    })
+}
+
+
+const excluiPedidoLocalStorage = (id) =>{
+    var qtdPedidos      = 0 
+    const pedidos       = getPedidosLocalStorage()
+    const filtroPedidos = pedidos.filter((pedido) => pedido.id != id )
+    filtroPedidos.forEach(() => {
+        qtdPedidos ++
+    })
+    if(qtdPedidos == 0){
+        localStorage.setItem("arrayPedidos",  JSON.stringify([]))
+    }
+    if(qtdPedidos > 0){
+        localStorage.setItem("arrayPedidos",  JSON.stringify(filtroPedidos))
+    }
+}
+
+
+function setItemLocalStorageApi(lancamentos){
+    var arrayLancamentos = []
+    lancamentos.forEach(lancamento => {
+        lancamento = JSON.parse(lancamento.detalhes)
+        arrayLancamentos.push(lancamento)
+    })
+    localStorage.setItem("arrayGetApi", JSON.stringify(arrayLancamentos))
+}
+
+
+function getLancamentosApiLocalStorage(){
+    const lancamentos = JSON.parse(localStorage.getItem("arrayGetApi")) || [] ;
+    return lancamentos;
 }
 
 
 
-function getADICIONAIS_LocalStorage (){
-    const objetoExport = JSON.parse(localStorage.getItem("ADICIONAIS")) || [] ;
-    return objetoExport
-}
+loadPedidos()
+
+
+
+
+
+
 
 
 
