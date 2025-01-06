@@ -46,6 +46,9 @@ function addNovoLancamentoAutomatico(){
     modal.classList.remove('active')
     document.querySelector(".infoCarrinho").innerHTML = ''
     itens  = []
+    // reset frete
+    document.querySelector('#entregar').checked = 0
+    document.querySelector('.divFrete').innerHTML =''
 }
 
 

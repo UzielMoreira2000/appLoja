@@ -28,9 +28,12 @@ const savePedidosLocalStorage = (pedido) =>{
 const loadPedidos  = () => {
     const pedidos  = getPedidosLocalStorage()
     pedidos.forEach((pedido) => {
-        exibirPedido(pedido, save=0)
-        // if(pedido.data.dia == data_Time().dia){
-        // }
+        // erro ao carregar páginia de historico por 
+        // não possuir a função de exibir pedido o código
+        // deve ser mantido dessa forma 
+        if(pedido.data.dia == data_Time().dia){
+            exibirPedido(pedido, save=0)
+        }
     })
 }
 

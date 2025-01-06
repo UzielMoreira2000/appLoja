@@ -9,7 +9,7 @@ function labelInputValue_Frete (valor=5){
     if (checkItem.checked) {
         labelItem.innerHTML = `${textItem}
         <div class="divFrete">
-            <input class="inputValorFrete qtdItem" id="qtdentregar" 
+            <input class="inputValorFrete qtdItemFrete" id="qtdentregar" 
             type="number" 
             value="${valor}" min="1" onclick="calculaFrete()
             ">

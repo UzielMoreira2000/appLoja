@@ -27,7 +27,6 @@ function apiPost(lancamento, tipo) {
 }
 
 
-
 function apiGet(){
     fetch(urlApiProd)
     .then((response) => response.json())

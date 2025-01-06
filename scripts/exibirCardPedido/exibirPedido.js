@@ -42,15 +42,18 @@ function exibirPedido(pedido, save){
                 <i class='moveProximo bx bx-chevron-right'></i> 
                 </button>
                 <br>
-                Valor Pedido:  <b> ${pedido.valor} R$ </b>
+                Valor Pedido:  <b> R$  ${pedido.valor} R$ </b>
                 <br>
                 <button class="btnCopos" onclick="verDetalhes('${pedido.id}')">
-                Ver detalhes do pedido
+                    Ver detalhes do pedido
                 </button>
                 <div class="copos invisivel" id="copos${pedido.id}">
                     ${objItem} 
                     ${objFrete}
                 </div> 
+                <br>
+                <br>
+                    ${pedido.data.hora} : ${pedido.data.min}
                 <br>
                 <button>
                 <i onclick="excluiPedidoLocalStorage('${pedido.id}')" class='excluir bx bx-x'></i>
@@ -65,14 +68,18 @@ function exibirPedido(pedido, save){
     if(pedido.status == 'concluido'){
         cardpedido.innerHTML = `
             <div class="cardPedido ${pedido.id} ${pedido.status}">
-                Valor Pedido:${pedido.valor} 
+                Valor Pedido: R$ ${pedido.valor} 
                 <br>
                 <button class="btnCopos" onclick="verDetalhes('${pedido.id}')">
                 Ver detalhes do pedido
                 </button>
                 <div class="copos invisivel" id="copos${pedido.id}">
-                ${objItem} 
+                    ${objItem} 
                 </div> 
+                <br>
+                    ${pedido.data.hora} : ${pedido.data.min}
+                <br>
+                    ${pedido.data.dia}/${pedido.data.mes}/${pedido.data.ano}
                 <br>
             </div> 
         `

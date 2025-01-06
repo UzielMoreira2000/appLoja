@@ -20,6 +20,7 @@ function addCopo() {
     resetCopo()
 }
 
+
 function resetCopo(){
     var inputsCheckAdcs = document.querySelectorAll(`input[type=checkbox]`)
     var inputsQtdAdcs = document.querySelectorAll(`.qtdItem`)

@@ -2,6 +2,7 @@
 
 function getObjAuth(){
     const objAuth = JSON.parse(localStorage.getItem("objAuth")) || '0' ;
+    console.log(objAuth)
     return objAuth
 }
 

@@ -8,7 +8,7 @@ function funcaoIinfoCarrinho(){
     var infoCarrinho = document.querySelector(".infoCarrinho")
     itens.forEach((item) =>{
         qtdItens    ++
-        valor +=  parseFloat(new Number(item.valorPorItem).toFixed(1))
+        valor +=  parseFloat(new Number(item.valorPorItem).toFixed(2))
     })  
     valor += valorFrete
     infoCarrinho.innerHTML = `
