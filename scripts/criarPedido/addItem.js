@@ -10,7 +10,7 @@ const f_geraId = () => {
 }
 
 
-// (item) espera receber => bebida,salgado,doce
+// (item) espera receber => bebida,salgado,doce,copo
 function addItem(item){
     var qtdItem      = 0
     var valorPorItem = 0

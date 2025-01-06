@@ -1,22 +1,86 @@
  
 
- const listaAdcs = [
-  {nome:'leite condensado'  ,valor: 1, premium: false},
-  {nome:'calda de chocolate',valor: 1, premium: false},
-  {nome:'calda de morango'  ,valor: 1, premium: false},
-  {nome:'morango'           ,valor: 1, premium: false},
-  {nome:'uva'               ,valor: 1, premium: false},
-  {nome:'banana'            ,valor: 1, premium: false},
-  {nome:'ovomaltine'        ,valor: 1, premium: false},
-  {nome:'leite ninho'       ,valor: 1, premium: false},
-  {nome:'pacoca'            ,valor: 1, premium: false},
-  {nome:'granola'           ,valor: 1, premium: false},
-  {nome:'mem'               ,valor: 3, premium: true },
-  {nome:'kitkat'            ,valor: 4, premium: true },
-  {nome:'nutella'           ,valor: 5, premium: true },
+ const PRODUTOS = [
+  {
+    id: 'leitecondensado', 
+    nome:'Leite Condensado'  ,
+    valor: 1, 
+    premium: false
+  },
+  {
+    id: 'caldadechocolate', 
+    nome:'Calda de Chocolate',
+    valor: 1, 
+    premium: false
+  },
+  {
+    id: 'caldademorango', 
+    nome:'Calda de Morango'  ,
+    valor: 1,
+    premium: false
+  },
+  {
+    id: 'Morango', 
+    nome:'Morango'           ,
+    valor: 1, 
+    premium: false
+  },
+  {
+    id: 'uva', 
+    nome:'Uva'               ,
+    valor: 1, 
+    premium: false
+  },
+  {
+    id: 'banana', 
+    nome:'Banana'            ,
+    valor: 1, 
+    premium: false
+  },
+  {
+    id: 'ovomaltine', 
+    nome:'Ovomaltine'        ,
+    valor: 1, premium: false
+  },
+  {
+    id: 'leite ninho', 
+    nome:'Leite Ninho'       ,
+    valor: 1, 
+    premium: false
+  },
+  {
+    id: 'pacoca', 
+    nome:'Paçoca'            ,
+    valor: 1, 
+    premium: false
+  },
+  {
+    id: 'granola', 
+    nome:'Granola'           ,
+    valor: 1, 
+    premium: false
+  },
+  {
+    id: 'mem', 
+    nome:'M&m'               ,
+    valor: 3, 
+    premium: true 
+  },
+  {
+    id: 'kitkat', 
+    nome:'Kit Kat'            ,
+    valor: 4, 
+    premium: true 
+  },
+  {
+    id: 'nutella', 
+    nome:'Nutella'           ,
+    valor: 5, 
+    premium: true 
+  },
  ]
 
- localStorage.setItem("adicionaisAcai", JSON.stringify(listaAdcs))
+ localStorage.setItem("adicionaisAcai", JSON.stringify(PRODUTOS))
 
 
  function getAdcsLocalStorage(){
@@ -27,14 +91,11 @@
 
 function printListaAdcs(){
   const printListaAdcs = document.querySelector('.printListaAdcs')
-  listaAdcs.forEach(adc => {
-      var nome_Split = adc.nome.split(' ')
-      var nome_Split_Join =  nome_Split.join('')
-      var nome = nome_Split_Join
+  PRODUTOS.forEach(produto => {
     printListaAdcs.innerHTML += `
-      <input id="${nome}" name="${adc.nome}" type="checkbox" class="adcComum adc"
-        onclick="labelInputValue_Item('${nome}',${adc.valor})">
-      <label id="${nome}" for="">${adc.nome}</label>
+      <input id="${produto.id}" name="${produto.nome}" type="checkbox" class="adcComum adc"
+        onclick="labelInputValue_Item('${produto.id}',${produto.valor})">
+      <label id="${produto.id}" for="">${produto.nome}</label>
       <br>`
   })
 }
@@ -52,6 +113,9 @@ function labelInputValue_Item(item, valor){
     labelItem.innerHTML = `${labelItem.textContent}`
   }
 }
+
+
+
 
 
 
