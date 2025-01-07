@@ -12,6 +12,11 @@
     <script src="scripts/usuario/auth.js" defer></script>
     <script src="scripts/usuario/inAuth.js" defer></script>
 
+    <script src="scripts/DB_CATEGORIAS.js" defer></script>
+    <script src="scripts/DB_PRODUTOS.js" defer></script>
+    <script src="scripts/DB_OUTRAS.js" defer></script>
+    <script src="scripts/hub_CATEGORIA.js" defer></script>
+
     <script src="scripts/api.js" defer></script>
     <script src="scripts/data_Time.js" defer></script>
     <script src="scripts/exibirCardPedido/exibirPedido.js" defer></script>
@@ -98,10 +103,7 @@
                         <p></p>
                     </div>
                     <div class="selectTipoItem">
-                        <button id="btnAcai">Açais</button>
-                        <button id="btnBebidas">Bebidas</button>
-                        <button id="btnSalgados">Salgados</button>
-                        <button id="btnDoces">Doces</button>
+                        <div  class="botoes_das_categorias"></div>
                     </div>
                     <div class="opcoes">
                         <div class="col-a">
@@ -115,16 +117,19 @@
                             onclick="labelInputValue_Frete()" >
                             <label for="select" id="entregar" class="entregar"> 
                                 Entrega</label>
-                            <br><br>
+                            <br>
+                            <br>
 
-                            <button id="btnAtualizar" onclick="atualizarPedido()">
+                            <div class="opcoes_das_categorias"></div>
+
+                            <!-- <button id="btnAtualizar" onclick="atualizarPedido()">
                                 Atualizar Pedido
                             </button>
                             <button id="btnAddPedido" onclick="addNovoLancamentoAutomatico()">
                                 Adicionar Pedido
-                            </button>
+                            </button> -->
                             
-                            <div class="doces">
+                            <!-- <div class="doces">
                                 <label for="comsumirEm"><p> Doces </p></label>
                                 <input id="pirulitoBig" name="" type="checkbox" 
                                 class="doce"
@@ -228,7 +233,8 @@
                                 <br>
                                 <label for="quantidade"><p>Quantidade</p>
                                 <input id="quantidade" class="qtdCopos" name="quantidade" type="number" value="1" min="1">
-                                <!-- <section class="configPedido">
+                            </div>  -->
+                            <!-- <section class="configPedido">
                                     <button class="btnDataManualDoPedido" onclick="abrir_dataManualDoPedido()">
                                         <img src="imagens/config.svg" > 
                                     </button>
@@ -240,24 +246,10 @@
                                         <p class="feedbackData"></p>
                                     </div>
                                 </section> -->
-                                    
-                                
-                            </div> <!-- acai -->
                         </div><!-- col-a -->
 
                         <div class="col-b">
-                            <button id="addItem"></button>
-                            <p>Selecione os Adicionais </p>
-                            <div class="printListaAdcs"></div>
-                            <div class="acaiB" >
-                                <!-- <button id="btnAddCopoInEdit" onclick="addCopoInEdit()">
-                                    *Adicionar Copo 
-                                </button>
-                                <button id="btnEditCopo" onclick="btnEditCopo()">
-                                    Atualizar Copo 
-                                </button> -->
-                            </div><!-- acai -->
-                            <br>                            
+                            <div class="opcoes_dos_adicionais"></div>
                         </div><!--col-b -->
 
                         <div class="col-c">

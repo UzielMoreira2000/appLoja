@@ -1,4 +1,7 @@
 
+const TIPOS = [
+    'cupuaçu', 'misto', 'açai'
+]
 
 const AÇAIS = [
     {
@@ -7,6 +10,7 @@ const AÇAIS = [
         valor:10,
         tamanho:200,
         um: 'ml',
+        tipo: TIPOS,
     },
     {
         id:'copo300ml',
@@ -14,6 +18,7 @@ const AÇAIS = [
         valor:16,
         tamanho:300,
         um: 'ml',
+        tipo: TIPOS,
     },
     {
         id:'copo500ml',
@@ -21,6 +26,7 @@ const AÇAIS = [
         valor:20,
         tamanho:500,
         um: 'ml',
+        tipo: TIPOS,
     },
 ] 
 
@@ -122,24 +128,50 @@ const CATEGORIAS = [
         id: 'acais', 
         nome: 'Açais', 
         itens: AÇAIS,
+        input: 'radio',
     },
     {
         id: 'bebidas', 
         nome: 'Babidas', 
         itens: BEBIDAS,
+        input: 'checkbox',
     },
     {
         id: 'salgados', 
         nome: 'Salgados', 
         itens: SALGADOS,
+        input: 'checkbox',
     },
     {
         id: 'doces', 
         nome: 'Doces', 
         itens: DOCES,
+        input: 'checkbox',
     },
 ]
+
 
 function salva_CATEGORIAS_LocalStorage(){
     localStorage.setItem("CATEGORIAS", JSON.stringify(CATEGORIAS))
 }salva_CATEGORIAS_LocalStorage()
+
+
+function get_CATEGORIAS_LocalStorage(){
+    const CATEGORIAS = JSON.parse(localStorage.getItem("CATEGORIAS")) || [] ;
+    return CATEGORIAS
+}get_CATEGORIAS_LocalStorage()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
