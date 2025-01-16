@@ -46,6 +46,7 @@
     <script src="scripts/pagamento/exibirPagamento.js" defer></script>
     <script src="scripts/pagamento/finalizarPagamento.js" defer></script>
     <script src="scripts/onkeyup.js" defer></script>
+    <script src="scripts/adicionar_itens.js" defer></script>
 
 </head>
 
@@ -88,7 +89,7 @@
     <div id="containerPedido" class="" >
         <div class="novoPedido">
             <button class="btnNovoPedido " id="btnNovoPedido" 
-            onclick="statusBtn('novoPedido')">
+            onclick="novoPedido()">
                 <i class='bx bx-plus-circle'></i> Novo Pedido
             </button>       
             </div>
@@ -116,15 +117,24 @@
                             type="radio"
                             onclick="labelInputValue_Frete()" >
                             <label for="select" id="entregar" class="entregar"> 
-                                Entrega</label>
+                                Entrega
+                            </label>
                             <br>
                             <br>
-
+                            <div class="botao_adicionar_itens">
+                                <button onclick="adicionar_itens()">
+                                    Adicionar Itens
+                                </button>
+                            </div>
+                            <br>
                             <div class="opcoes_das_categorias"></div>
 
-                            <!-- <button id="btnAtualizar" onclick="atualizarPedido()">
+                            <button id="btnAtualizar" onclick=""
+                                style="display: none;">
                                 Atualizar Pedido
                             </button>
+                            
+                            <!-- 
                             <button id="btnAddPedido" onclick="addNovoLancamentoAutomatico()">
                                 Adicionar Pedido
                             </button> -->

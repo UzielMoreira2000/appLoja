@@ -10,39 +10,41 @@ function opcoes_das_categorias(id){
             if(id == 'acais'){
                 tipo = 'name="tipo"'
                 html += `
-                <label for="tipo" ><p> Tipo de montagem </p></label>`
+                <label for="tipo" id="tamanhoDosCopos">
+                    <p> Tipo de montagem </p>
+                </label>`
                 opcoes_dos_adicionais()
             }
-            categoria.itens.forEach(item => {
-                html +=`
-                    <input ${tipo}
-                        type="${categoria.input}" 
-                        class=""
-                        id="${item.id}" 
-                        name="${item.nome}" 
-                        onclick="labelInputValue_Item(
-                        '${item.id}', '${item.valor}', '${categoria.id}'
-                    )">
-                    <label id="${item.id}" for="">
-                        ${item.nome}
-                    </label>
-                <br>`
-            });
+            var inputs_e_labels = 
+            exibir_inputs_e_labels(categoria.itens, tipo, categoria)
+            html += inputs_e_labels
         }
     })
     div.innerHTML = html 
 }
 
 
-function opcoes_de_acai(){
+function exibir_inputs_e_labels(itens, tipo, categoria){
     var html = ''
-    const ADICIONAIS = get_ADICIONAIS_LocalStorage()
-    ADICIONAIS.forEach(adicional => {
-        console.log(adicional)
-        html += ``
+    itens.forEach(item => {
+        html +=`
+        <input ${tipo}
+            type="${categoria.input}" 
+            class=""
+            id="${item.id}" 
+            name="${item.nome}" 
+            onclick="labelInputValue_Item(
+            '${item.id}', '${item.valor}', '${categoria.id}'
+        )">
+        <label id="${item.id}" for="">
+            ${item.nome}
+        </label>
+        <br>`
     });
     return html
-  }
+}
+
+
 
 
 
