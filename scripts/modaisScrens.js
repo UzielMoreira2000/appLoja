@@ -8,7 +8,7 @@ const btnNovoPedido = document.querySelector('#btnNovoPedido')
 const btnAtualizar  = document.querySelector('#btnAtualizar')
 
 
-btnNovoPedido.addEventListener("click", () =>{
+function novo_pedido(){
   modal.classList.add('active')
   modal.onclick = e => {
     if (e.target.className.indexOf('modal-container') !== -1) {
@@ -19,22 +19,15 @@ btnNovoPedido.addEventListener("click", () =>{
     modal.classList.remove('active')
     location.reload();
   })
+  status_do_Modal('Montando')
   carrinhoPedido.innerHTML = ''
-  itens = itens
-})
+  exibir_botoes_das_categorias()
+}
 
 
-const status_do_Modal = (paramametro, idPedido) =>{
-  const statusPedido  = document.querySelector(".statusPedido")
-  const textIdPedido  = document.querySelector(".idPedidoInEdit")  
-  if (paramametro == "editando"){
-    textIdPedido.innerHTML = idPedido    
-    statusPedido.innerHTML = 'Editando Pedido'
-  }
-  if (paramametro == "montando"){
-    statusPedido.innerHTML = 'Montando Pedido'        
-    textIdPedido.innerHTML = ''        
-  }
+function status_do_Modal (paramametro){
+  const statusPedido  = document.querySelector(".statusPedido") 
+  statusPedido.innerHTML = paramametro + ' Pedido'
 }
 
 

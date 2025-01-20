@@ -125,7 +125,7 @@ const DOCES = [
 
 const CATEGORIAS = [
     {
-        id: 'acais', 
+        id: 'acais',
         nome: 'Açais', 
         itens: AÇAIS,
         input: 'radio',

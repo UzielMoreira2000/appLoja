@@ -1,5 +1,13 @@
 
+var itens = []
 
 function adicionar_itens(){
-    console.log('adicionar')
+    console.log(cagoriaAtual)
+    
 }
+
+
+
+
+
+

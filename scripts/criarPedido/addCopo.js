@@ -1,6 +1,5 @@
 
 
-var itens = []
 
 function addCopo() {
     moduloAdicionais()

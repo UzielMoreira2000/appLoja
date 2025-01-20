@@ -1,0 +1,64 @@
+
+Estrutura do Modal:
+
+button => novo_pedido () {
+    * abrir e fechar modal
+    * chama status_do_Modal('Montando')
+    * chama exibir_botoes_das_categorias() 
+}
+
+funcão => status_do_Modal () {
+    * exibe no topo do modal a atividade em curso:
+    'Montando' ou 'Editanto'
+}
+
+funcão => exibir_botoes_das_categorias () {
+    * cria os botoes de exibir categoria com
+    a funcão de chamar opcoes_das_categorias()
+}
+
+button => opcoes_das_categorias {
+    * define o valor da variavel global 'cagoriaAtual' 
+    * recebe os paramatros: {
+        variavel: 'parmCategoria'
+    }
+    if(categoria == acais){
+        * cria os inputs tipo radio para tamanho dos copos 
+        * chama a funcão de exibir_adicionais()
+    }
+   else{
+        * cria inputs tipo checkbox para todos produtos
+   }
+    * O html é montado na função exibir_inputs_()
+}
+
+funcão => exibir_inputs_e_labels() {
+    * recebe os paramatros: {
+        * objeto: 'item'
+        * variavel: 'tipo'
+        * variavel: 'categoria'
+    }
+    * cria o html de todas as opções de inputs de produtos,
+    * exporta a string html 
+}
+
+funcão => exibir_adicionais(){
+    * criar inputs checkbox para todos exibir_adicionais
+}
+
+funcão => exibir_input_da_quantidade(){
+    * cria o campo de input para quantidade de adicional ou produto
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
