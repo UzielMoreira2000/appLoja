@@ -82,7 +82,12 @@ const ADICIONAIS = [
 
 
 function salva_ADICIONAIS_LocalStorage(){
-    localStorage.setItem("ADICIONAIS", JSON.stringify(ADICIONAIS))
+    localStorage.setItem("ADICIONAIS", JSON.stringify({
+        id: 'adicionias',
+        nome: 'Adicionais',
+        itens: ADICIONAIS,
+        input: 'checkbox',
+    }))
 }salva_ADICIONAIS_LocalStorage()
 
 

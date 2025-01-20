@@ -3,9 +3,8 @@
 var cagoriaAtual = ''
 
 function exibir_botoes_das_categorias(){
-  document.querySelector('.opcoes_das_categorias').innerHTML = ''
-  document.querySelector('.opcoes_dos_adicionais').innerHTML = ''
   var html = ''
+  document.querySelector('.opcoes_das_categorias').innerHTML = ''
   const div = document.querySelector('.botoes_das_categorias')
   const categorias = get_CATEGORIAS_LocalStorage()
   categorias.forEach(categoria => {
@@ -20,9 +19,9 @@ function exibir_botoes_das_categorias(){
 
 
 function opcoes_das_categorias(parmCategoria){
-  cagoriaAtual = parmCategoria
   var tipo = ''
   var html = '<br>'
+  document.querySelector('.opcoes_dos_adicionais').innerHTML = ''
   const div = document.querySelector('.opcoes_das_categorias')
   const CATEGORIAS = get_CATEGORIAS_LocalStorage()
   CATEGORIAS.forEach(categoria => {
@@ -31,8 +30,8 @@ function opcoes_das_categorias(parmCategoria){
           tipo = 'name="tipo"'
           html += `
           <label for="tipo" id="tamanhoDosCopos">
-            <p> Tipo de montagem </p>
-          </label>`
+            <p> Tipo de montagem 
+          </p></label>`
           exibir_adicionais()
         }
         var inputs_e_labels = 
@@ -41,11 +40,13 @@ function opcoes_das_categorias(parmCategoria){
       }
   })
   div.innerHTML = html 
+  cagoriaAtual = parmCategoria
 }
 
 
 function exibir_inputs(itens, tipo, categoria){
   var html = ''
+  console.log(tipo,categoria)
   itens.forEach(item => {
       html +=`
       <input ${tipo}
@@ -53,7 +54,7 @@ function exibir_inputs(itens, tipo, categoria){
           class=""
           id="${item.id}" 
           name="${item.nome}" 
-          onclick="exibir_exibir_input_da_quantidade(
+          onclick="exibir_input_da_quantidade(
           '${item.id}', '${item.valor}', '${categoria.id}'
       )">
       <label id="${item.id}" for="">
@@ -69,15 +70,16 @@ function exibir_adicionais(){
   var html = '<p>Selecione os Adicionais </p>'
   const div = document.querySelector('.opcoes_dos_adicionais')
   const ADICIONAIS = get_ADICIONAIS_LocalStorage()
-  ADICIONAIS.forEach(adicional => {
+  ADICIONAIS.itens.forEach(adicional => {
+    // console.log(adicional)
     html += `
       <input 
         type="checkbox" 
         class="adcComum adc"
         id="${adicional.id}" 
         name="${adicional.nome}" 
-        onclick="exibir_exibir_input_da_quantidade('
-        '${item.id}', '${item.valor}', '${categoria.id}'
+        onclick="exibir_input_da_quantidade(
+        '${adicional.id}', '${adicional.valor}', '${ADICIONAIS.id}'
       )">
       <label id="${adicional.id}" for="">
         ${adicional.nome}
